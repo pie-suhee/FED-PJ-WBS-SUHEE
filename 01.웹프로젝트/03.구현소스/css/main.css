@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+@import url(reset.css);
+
+body {
+    width: 100vw;
+    height: 600vh;
+	background-image: url(../img/tree_bg.png);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.slide_section {
+	width: 100%;
+	height: 22vh;
+	bottom: 0;
+	position: fixed;
+}
+
+.slide_section > .contents_con {
+	display: flex;
+	width: 300vw;
+	height: 300vw;
+	max-width: 2000px;
+	max-height: 2000px;
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.slide_section > .contents_con > .img_con {
+	width: 6%;
+	max-width: 660px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	aspect-ratio: 1 / 1;
+	cursor: pointer;
+}
+
+.slide_section > .contents_con > .img_con > img {
+    width: 100%;
+	pointer-events: none;
+	cursor: pointer;
+	z-index: 100;
+}
+
+.header {
+	display: flex;
+	width: 100%;
+	height: 60vh;
+	position: fixed;
+	top: 10vh;
+	left: 0;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.header img {
+	width: 40vw;
+	max-width: 350px;
+}
+
+/* SCROLL DOWN */
+.scroll_down {
+	position: fixed;
+	bottom: 20px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	font-size: 14px;
+	color: white;
+	font-weight: 400;
+	text-transform: uppercase;
+	overflow: visible;
+}
+
+.scroll_down .arrow {
+	width: 15px;
+	height: 15px;
+	margin: 0 auto;
+	position: relative;
+	top: 0px;
+	filter: invert(1);
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KPHBhdGggZmlsbD0iYmxhY2siIGQ9Ik00ODMuMiwxOTIuMmMtMjAuNS0yMC41LTUzLjUtMjAuOC03My43LTAuNkwyNTcsMzQ0LjFMMTA0LjUsMTkxLjZjLTIwLjItMjAuMi01My4yLTE5LjktNzMuNywwLjYKCWMtMjAuNSwyMC41LTIwLjgsNTMuNS0wLjYsNzMuN2wxOTAsMTkwYzEwLjEsMTAuMSwyMy40LDE1LjEsMzYuOCwxNWMxMy4zLDAuMSwyNi43LTQuOSwzNi44LTE1bDE5MC0xOTAKCUM1MDMuOSwyNDUuNyw1MDMuNywyMTIuNyw0ODMuMiwxOTIuMnoiLz4KPC9zdmc+);
+	background-size: contain;
+}
+
+.scbar::-webkit-scrolbar {
+	width: 7px;
+}
+
+.scbar::-webkit-scrollbar-thumb {
+	background-color: #555;
+	border-radius: 5px;
+}
+
+.scbar::-webkit-scrollbar-track {
+	background-color: #ddd;
+	border-radius: 5px;
+}
