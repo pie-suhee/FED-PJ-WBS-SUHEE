@@ -47,8 +47,8 @@ gsap.to(".slide_section > .contents_con", {
 });
 
 let cards = gsap.utils.toArray(".slide_section > .contents_con > .img_con");
-let header = document.querySelector(".header");
-let body = document.querySelector(".header");
+let header = document.querySelector(".bImg");
+let body = document.querySelector(".bImg");
 
 let isFullScreen = false;
 
