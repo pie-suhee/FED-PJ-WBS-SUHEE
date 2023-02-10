@@ -1,5 +1,6 @@
 console.clear();
 
+// 슬라이드 ani 시작
 gsap.registerPlugin("ScrollTrigger");
 
 let wheel = document.querySelector(".slide_section > .contents_con");
@@ -100,3 +101,4 @@ function flip(e) {
 
 	lastClickedCard = e.target;
 }
+// 슬라이드 ani 끝
