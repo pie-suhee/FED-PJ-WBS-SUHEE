@@ -1,7 +1,7 @@
 const artist = {
     "KANG KI YOUNG" : {
         "name" : "강기영",
-        "url" : "../img/artist_kangkiyoung01.png",
+        "url" : "./img/artist_kangkiyoung01.png",
         "birth" : "1983. 10. 14",
         "debut" : "2009 연극 나쁜자석",
         "prize" : [
@@ -80,7 +80,7 @@ const artist = {
     },
     "KO WOO RIM" : {
         "name" : "고우림",
-        "url" : "../img/artist_kowoorim01.png",
+        "url" : "./img/artist_kowoorim01.png",
         "birth" : "2007. 09. 15",
         "debut" : "2013 영화 친구2",
         "cf" : [
@@ -125,7 +125,7 @@ const artist = {
     },
     "KOO KYO HWAN" : {
         "name" : "구교환",
-        "url" : "../img/artist_kookyohwan01.png",
+        "url" : "./img/artist_kookyohwan01.png",
         "birth" : "1982. 12. 14",
         "prize" : [
             "2022 제1회 청룡어워즈시리즈 드라마부문 신인남우상",
@@ -199,7 +199,7 @@ const artist = {
     },
     "KIM JOO HYUCK" : {
         "name" : "김주혁",
-        "url" : "../img/artist_kimjoohyuck01.png",
+        "url" : "./img/artist_kimjoohyuck01.png",
         "birth" : "1983. 10. 14",
         "debut" : "1998 드라마 흐린 날에 쓴 편지",
         "prize" : [
@@ -272,7 +272,7 @@ const artist = {
     },
     "KANG JAE KYUNG" : {
         "name" : "김재경",
-        "url" : "../img/artist_kimjaekyung01.png",
+        "url" : "./img/artist_kimjaekyung01.png",
         "birth" : "1988. 12. 24",
         "debut" : "2009 레인보우 EP 앨범 'Gossip Girl'",
         "prize" : [
@@ -344,7 +344,7 @@ const artist = {
     },
     "KIM HWAN HEE" : {
         "name" : "김환희",
-        "url" : "../img/artist_kimhwanhee01.png",
+        "url" : "./img/artist_kimhwanhee01.png",
         "birth" : "2002. 08. 25",
         "debut" : "	2008 SBS 드라마 불한당",
         "prize" : [
@@ -385,7 +385,7 @@ const artist = {
     },
     "KIM HYO JIN" : {
         "name" : "김효진",
-        "url" : "../img/artist_kimhyojin01.png",
+        "url" : "./img/artist_kimhyojin01.png",
         "birth" : "1984. 02. 10",
         "debut" : "1999 패션매거진 '신디 더 퍼키' 모델",
         "prize" : [
@@ -463,7 +463,7 @@ const artist = {
     },
     "ROH JEONG EUI" : {
         "name" : "노정의",
-        "url" : "../img/artist_rohjeongeui01.jpg",
+        "url" : "./img/artist_rohjeongeui01.jpg",
         "birth" : "2001. 07. 31",
         "debut" : "	2011 채널A 총각네 야채가게",
         "prize" : [
@@ -528,7 +528,7 @@ const artist = {
     },
     "DO JI WON" : {
         "name" : "도지원",
-        "url" : "../img/artist_dojiwon01.jpg",
+        "url" : "./img/artist_dojiwon01.jpg",
         "birth" : "1996. 03. 05",
         "debut" : "1989 CF 드봉 전속모델",
         "prize" : [
@@ -589,7 +589,7 @@ const artist = {
     },
     "PARK SUN HO" : {
         "name" : "박선호",
-        "url" : "../img/artist_parksunho01.jpg",
+        "url" : "./img/artist_parksunho01.jpg",
         "birth" : "1993. 05. 09",
         "debut" : "	2014 MBC 황금 무지개",
         "cf" : [
@@ -625,7 +625,7 @@ const artist = {
     },
     "PARK EUN BIN" : {
         "name" : "박은빈",
-        "url" : "../img/parkeunbin01.jpg",
+        "url" : "./img/artist_parkeunbin01.jpg",
         "birth" : "1992. 09. 04",
         "debut" : "	1996 Pippy-삐삐 전속 모델",
         "prize" : [
@@ -744,7 +744,7 @@ const artist = {
     },
     "PARK JOONG HOON" : {
         "name" : "박중훈",
-        "url" : "../img/artist_parkjoonghoon01.jpg",
+        "url" : "./img/artist_parkjoonghoon01.jpg",
         "birth" : "1966. 03. 22",
         "debut" : "	1986 영화 깜보",
         "prize" : [
@@ -829,7 +829,7 @@ const artist = {
     },
     "PARK JI HYUN" : {
         "name" : "박지현",
-        "url" : "../img/artist_parkjihyun01.jpg",
+        "url" : "./img/artist_parkjihyun01.jpg",
         "birth" : "",
         "debut" : "",
         "prize" : [
@@ -849,7 +849,7 @@ const artist = {
     },
     "SEO YE HWA" : {
         "name" : "서예화",
-        "url" : "../img/artist_seoyehwa01.jpg",
+        "url" : "./img/artist_seoyehwa01.jpg",
         "birth" : "",
         "debut" : "",
         "prize" : [
@@ -869,7 +869,7 @@ const artist = {
     },
     "SEO HYUN" : {
         "name" : "서현",
-        "url" : "../img/artist_seohyun01.jpg",
+        "url" : "./img/artist_seohyun01.jpg",
         "birth" : "",
         "debut" : "",
         "prize" : [
@@ -889,7 +889,7 @@ const artist = {
     },
     "SONG KANG" : {
         "name" : "송강",
-        "url" : "../img/artist_songkang01.jpg",
+        "url" : "./img/artist_songkang01.jpg",
         "birth" : "",
         "debut" : "",
         "prize" : [
@@ -909,7 +909,7 @@ const artist = {
     },
     "SHIN SO HYUN" : {
         "name" : "신소현",
-        "url" : "../img/artist_shinsohyun01.jpg",
+        "url" : "./img/artist_shinsohyun01.jpg",
         "birth" : "",
         "debut" : "",
         "prize" : [
@@ -929,7 +929,7 @@ const artist = {
     },
     "OH HYUN JOONG" : {
         "name" : "오현중",
-        "url" : "../img/artist_ohhyunjoong01.jpg",
+        "url" : "./img/artist_ohhyunjoong01.jpg",
         "birth" : "",
         "debut" : "",
         "prize" : [
@@ -949,7 +949,7 @@ const artist = {
     },
     "YU JUN SANG" : {
         "name" : "유준상",
-        "url" : "../img/artist_yujunsang01.jpg",
+        "url" : "./img/artist_yujunsang01.jpg",
         "birth" : "",
         "debut" : "",
         "prize" : [
@@ -967,9 +967,9 @@ const artist = {
         "play" : [
         ],
     },
-    "PARK JI HYUN" : {
-        "name" : "박지현",
-        "url" : "../img/artist_parkjihyun01.jpg",
+    "YOO TAE JOO" : {
+        "name" : "유태주",
+        "url" : "./img/artist_yootaejoo01.jpg",
         "birth" : "",
         "debut" : "",
         "prize" : [
@@ -987,9 +987,9 @@ const artist = {
         "play" : [
         ],
     },
-    "PARK JI HYUN" : {
-        "name" : "박지현",
-        "url" : "../img/artist_parkjihyun01.jpg",
+    "LEE NA EUN" : {
+        "name" : "이나은",
+        "url" : "./img/artist_leenaeun01.jpg",
         "birth" : "",
         "debut" : "",
         "prize" : [
@@ -1007,9 +1007,9 @@ const artist = {
         "play" : [
         ],
     },
-    "PARK JI HYUN" : {
-        "name" : "박지현",
-        "url" : "../img/artist_parkjihyun01.jpg",
+    "LEE YUL EUM" : {
+        "name" : "이열음",
+        "url" : "./img/artist_leeyuleum01.jpg",
         "birth" : "",
         "debut" : "",
         "prize" : [
@@ -1027,9 +1027,9 @@ const artist = {
         "play" : [
         ],
     },
-    "PARK JI HYUN" : {
-        "name" : "박지현",
-        "url" : "../img/artist_parkjihyun01.jpg",
+    "LEE YOON JI" : {
+        "name" : "이윤지",
+        "url" : "./img/artist_leeyoonji01.jpg",
         "birth" : "",
         "debut" : "",
         "prize" : [
@@ -1047,9 +1047,9 @@ const artist = {
         "play" : [
         ],
     },
-    "PARK JI HYUN" : {
-        "name" : "박지현",
-        "url" : "../img/artist_parkjihyun01.jpg",
+    "LEE JUNG SIC" : {
+        "name" : "이정식",
+        "url" : "./img/artist_leejungsic01.jpg",
         "birth" : "",
         "debut" : "",
         "prize" : [
@@ -1067,9 +1067,9 @@ const artist = {
         "play" : [
         ],
     },
-    "PARK JI HYUN" : {
-        "name" : "박지현",
-        "url" : "../img/artist_parkjihyun01.jpg",
+    "LEE JEONG HA" : {
+        "name" : "이정하",
+        "url" : "./img/artist_leejeongha01.jpg",
         "birth" : "",
         "debut" : "",
         "prize" : [
@@ -1087,9 +1087,9 @@ const artist = {
         "play" : [
         ],
     },
-    "PARK JI HYUN" : {
-        "name" : "박지현",
-        "url" : "../img/artist_parkjihyun01.jpg",
+    "LEE JOON GI" : {
+        "name" : "이준기",
+        "url" : "./img/artist_leejoongi01.jpg",
         "birth" : "",
         "debut" : "",
         "prize" : [
@@ -1107,9 +1107,9 @@ const artist = {
         "play" : [
         ],
     },
-    "PARK JI HYUN" : {
-        "name" : "박지현",
-        "url" : "../img/artist_parkjihyun01.jpg",
+    "LEE TAE SEON" : {
+        "name" : "이태선",
+        "url" : "./img/artist_leetaeseon01.jpg",
         "birth" : "",
         "debut" : "",
         "prize" : [
@@ -1127,9 +1127,9 @@ const artist = {
         "play" : [
         ],
     },
-    "PARK JI HYUN" : {
-        "name" : "박지현",
-        "url" : "../img/artist_parkjihyun01.jpg",
+    "JO MIN KYEONG" : {
+        "name" : "조민경",
+        "url" : "./img/artist_jominkyeong01.jpg",
         "birth" : "",
         "debut" : "",
         "prize" : [
@@ -1147,9 +1147,9 @@ const artist = {
         "play" : [
         ],
     },
-    "PARK JI HYUN" : {
-        "name" : "박지현",
-        "url" : "../img/artist_parkjihyun01.jpg",
+    "JO WOO RI" : {
+        "name" : "조우리",
+        "url" : "./img/artist_jowoori01.jpg",
         "birth" : "",
         "debut" : "",
         "prize" : [
@@ -1167,9 +1167,9 @@ const artist = {
         "play" : [
         ],
     },
-    "PARK JI HYUN" : {
-        "name" : "박지현",
-        "url" : "../img/artist_parkjihyun01.jpg",
+    "CHA SEO WON" : {
+        "name" : "차서원",
+        "url" : "./img/artist_chaseowon01.jpg",
         "birth" : "",
         "debut" : "",
         "prize" : [
@@ -1187,9 +1187,9 @@ const artist = {
         "play" : [
         ],
     },
-    "PARK JI HYUN" : {
-        "name" : "박지현",
-        "url" : "../img/artist_parkjihyun01.jpg",
+    "CHOI HYO ZU" : {
+        "name" : "최효주",
+        "url" : "./img/artist_choihyozu01.jpg",
         "birth" : "",
         "debut" : "",
         "prize" : [
@@ -1207,9 +1207,9 @@ const artist = {
         "play" : [
         ],
     },
-    "PARK JI HYUN" : {
-        "name" : "박지현",
-        "url" : "../img/artist_parkjihyun01.jpg",
+    "HONG EUN HEE" : {
+        "name" : "홍은희",
+        "url" : "./img/artist_hongeunhee01.jpg",
         "birth" : "",
         "debut" : "",
         "prize" : [
@@ -1228,3 +1228,5 @@ const artist = {
         ],
     },
 }
+
+export default artist;
