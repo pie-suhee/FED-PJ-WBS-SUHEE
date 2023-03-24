@@ -14,26 +14,39 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+#main {
+	height: 100vh;
+}
+
+#main > .contents_con {
+	height: 100%;
+}
+
+.main_con {
+	height: 100%;
+}
+
 .slide_con {
-	position: absolute;
-	bottom: -5vw;
+	position: relative;
+	height: 100%;
 }
   
 .slide_con > .contents_con {
-	position: relative;
-  	width: 20vw;
-  	height: 20vw;
-  	margin: 0 auto;
+	position: absolute;
+  	width: 1vw;
+  	height: 1vw;
   	border-radius: 50%;
+	left: 50%;
+	bottom: -80vh;
+	transform: translateX(-50%);
 }
   
 .slide_con > .contents_con > .img_con {
 	position: absolute;
-  	top: 50%;
-  	left: 50%;
   	width: 7vw;
   	height: 7vw;
-  	margin: -50% 0 0 -68%;
+	top: 50%;
+	left: 50%;
   	transform-origin: center center;
   	transition: transform 0.5s;
 }

@@ -1,6 +1,6 @@
 import artist from "./artist.js";
+
 const qs = (x) => document.querySelector(x);
-const qsa = (x) => document.querySelectorAll(x);
 
 let newSection = document.createElement('div');
 newSection.classList.add('slide_con');
@@ -46,14 +46,24 @@ function setup() {
   
   cards.forEach((card, index) => {
     const angle = index * slice;
+    const inverseAngle = (index + total / 2) % total * slice;
     const x = center + radius * Math.sin(angle);
     const y = center - radius * Math.cos(angle);
-    
-    card.style.transform = `translate(${x}px, ${y}px) rotate(-${angle}rad)`;
-	card.querySelector("img").style.transform = `rotate(${angle*2}rad)`;
+    const firstX = center + radius * Math.sin(0);
+    const inverseY = (center - radius * Math.cos(inverseAngle)) / 2;
+
+    card.style.transform = `translate(calc(${x - firstX}px - 50%), calc(${y - inverseY}px - 50%)) rotate(-${angle}rad)`;
+    card.querySelector("img").style.transform = `rotate(${angle*2}rad)`;
   });
 }
 
 setup();
 
 window.addEventListener("resize", setup);
+
+
+
+
+
+
+
