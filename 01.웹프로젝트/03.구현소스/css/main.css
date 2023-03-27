@@ -169,13 +169,13 @@ body::-webkit-scrollbar {
 
 @media(max-width:1366px){
 	.slide_con > .contents_con {
-		bottom: -1250px;
+		bottom: -1300px;
 	}
 }
 
 @media(max-width:425px){
 	#top .logo {
-		width: max(15vw,130px);
+		width: max(15vw,50px);
 	}
 
 	#nav .mbg {
@@ -187,7 +187,7 @@ body::-webkit-scrollbar {
 	}
 
 	#nav .gnb a {
-		font-size: max(5vw,14px);
+		font-size: max(5vw,13px);
 	}
 
 	#nav .gnb a:hover {
