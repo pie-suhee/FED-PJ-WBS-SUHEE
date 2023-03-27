@@ -170,7 +170,7 @@ body::-webkit-scrollbar {
 
 @media(max-width:1366px){
 	.slide_con > .contents_con {
-		bottom: -1300px;
+		bottom: -1250px;
 	}
 }
 
