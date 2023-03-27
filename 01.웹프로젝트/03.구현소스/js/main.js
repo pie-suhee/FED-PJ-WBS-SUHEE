@@ -1,7 +1,31 @@
 import artist from "./artist.js";
 
 const qs = (x) => document.querySelector(x);
+const qsa = (x) => document.querySelectorAll(x);
 
+/* nav 시작 */
+const gnb = qsa(".gnb li");
+const mbg = qs(".mbg");
+
+gnb.forEach(ele=>{
+  ele.onmouseenter = e => {
+      let eLeft = ele.offsetLeft;
+      let eWidth = ele.offsetWidth;
+      let eHeight = ele.offsetHeight;
+  
+      mbg.style.left = eLeft+"px";
+      mbg.style.width = eWidth+"px";
+      mbg.style.height = eHeight+"px";
+      mbg.style.opacity = 1;
+  };
+
+  ele.onmouseleave = e => {
+      mbg.style.opacity = 0;
+  };
+});
+/* nav 끝 */
+
+/* slide html 동적 생성 시작 */
 let newSection = document.createElement('div');
 newSection.classList.add('slide_con');
 
@@ -34,8 +58,9 @@ newArrow.classList.add('arrow');
 newScrollDown.appendChild(newArrow);
 
 qs(".main_con").appendChild(newScrollDown);
+/* slide html 동적 생성 끝 */
 
-const wheel = document.querySelector(".contents_con");
+/* const wheel = document.querySelector(".contents_con");
 const cards = document.querySelectorAll(".img_con");
 const total = cards.length;
 const slice = 2 * Math.PI / total;
@@ -57,13 +82,54 @@ function setup() {
   });
 }
 
+setup(); */
+
+const wheel = document.querySelector(".contents_con");
+const cards = document.querySelectorAll(".img_con");
+const total = cards.length;
+const slice = 2 * Math.PI / total;
+let scrollProgress = 0;
+
+function setup() {
+  const radius = wheel.offsetWidth / 2;
+  const center = wheel.offsetWidth / 2;
+
+  cards.forEach((card, index) => {
+    const angle = index * slice;
+    const inverseAngle = (index + total / 2) % total * slice;
+    const x = center + radius * Math.sin(angle);
+    const y = center - radius * Math.cos(angle);
+    const firstX = center + radius * Math.sin(0);
+    const inverseY = (center - radius * Math.cos(inverseAngle)) / 2;
+
+    card.style.transform = `translate(calc(${x - firstX}px - 50%), calc(${y - inverseY}px - 50%)) rotate(-${angle}rad)`;
+    card.querySelector("img").style.transform = `rotate(${angle * 2}rad)`;
+  });
+}
+
+function updateCards() {
+  const radius = wheel.offsetWidth / 2;
+  const center = wheel.offsetWidth / 2;
+  const scrollPosition = window.scrollY;
+  scrollProgress = scrollPosition / (document.body.offsetHeight - window.innerHeight);
+  
+  cards.forEach((card, index) => {
+    if((index - scrollProgress * total) < 0){
+      index += total;
+    }
+    let angle = (index - scrollProgress * total) * slice; 
+    const inverseAngle = (index + total / 2 - scrollProgress * total) % total * slice;
+    const x = center + radius * Math.sin(angle);
+    const y = center - radius * Math.cos(angle);
+    const firstX = center + radius * Math.sin(0);
+    const inverseY = (center - radius * Math.cos(inverseAngle)) / 2;
+    
+    card.style.transform = `translate(calc(${x - firstX}px - 50%), calc(${y - inverseY}px - 50%)) rotate(-${angle}rad)`;
+    card.querySelector("img").style.transform = `rotate(${angle * 2}rad)`;
+  });
+}
+
 setup();
 
+window.addEventListener("scroll", updateCards);
 window.addEventListener("resize", setup);
-
-
-
-
-
-
-

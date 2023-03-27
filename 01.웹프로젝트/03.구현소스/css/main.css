@@ -9,6 +9,9 @@ body {
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
+body *{
+	font-family: "Flaviotte";
+}
 
 body::-webkit-scrollbar {
     display: none;
@@ -24,6 +27,73 @@ body::-webkit-scrollbar {
 
 .main_con {
 	height: 100%;
+	position: relative;
+}
+
+#top {
+	position: fixed;
+	top: 6vh;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 100;
+}
+
+#top .logo {
+	width: min(10vw,75px);
+	margin: 0 auto;
+}
+
+#top .logo > a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+#top .logo > a img {
+	width: 100%;
+}
+
+#nav {
+	margin-top: min(3vw,3vh);
+}
+
+#nav .gnb {
+	position: relative;
+	background: linear-gradient(180deg, #ABB553 0%, rgba(129, 125, 43, 0.5) 100%);
+	border-radius: 40px;
+}
+
+#nav .mbg {
+	position: absolute;
+	left: 0;
+	background-color: #f7efe1;
+	border-radius: 40px;
+	transition: .4s ease-in-out;
+	opacity: 0;
+}
+
+#nav .gnb ul {
+	position: relative;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#nav .gnb a {
+	margin-top: min(1vw,6px);
+	text-decoration: none;
+	color: #ffffff;
+	font-size: min(4vw,24px);
+	display: block;
+	padding: min(1vh,1vw) min(2vw,20px);
+	white-space: nowrap;
+	transition: color 0.2s;
+}
+
+#nav .gnb a:hover {
+	color: #000000;
+	transition-delay: 0.2s;
 }
 
 .slide_con {
@@ -32,8 +102,7 @@ body::-webkit-scrollbar {
 }
   
 .slide_con > .contents_con {
-	position: absolute;
-  	width: 1vw;
+	position: fixed;
   	height: 1vw;
   	border-radius: 50%;
 	left: 50%;
@@ -96,4 +165,14 @@ body::-webkit-scrollbar {
 .scbar::-webkit-scrollbar-track {
 	background-color: #ddd;
 	border-radius: 5px;
+}
+
+@media(max-width:425px){
+	#nav .mbg {
+		display: none;
+	}
+
+	#nav .gnb a:hover {
+		color: #ffffff;
+	}
 }
