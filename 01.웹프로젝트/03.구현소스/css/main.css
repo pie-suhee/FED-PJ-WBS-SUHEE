@@ -170,7 +170,7 @@ body::-webkit-scrollbar {
 
 @media(max-width:1366px){
 	.slide_con > .contents_con {
-		bottom: -1300px;
+		bottom: -1200px;
 	}
 }
 
@@ -193,6 +193,10 @@ body::-webkit-scrollbar {
 
 	#nav .gnb a:hover {
 		color: #ffffff;
+	}
+
+	.slide_con > .contents_con {
+		bottom: -1300px;
 	}
 
 	.slide_con > .contents_con > .img_con {
