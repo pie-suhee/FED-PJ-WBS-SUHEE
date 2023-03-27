@@ -176,7 +176,7 @@ body::-webkit-scrollbar {
 
 @media(max-width:425px){
 	#top .logo {
-		width: max(30vw,75px);
+		width: max(40vw,75px);
 	}
 
 	#nav .mbg {
