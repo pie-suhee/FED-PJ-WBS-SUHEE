@@ -36,11 +36,17 @@ for(let i in artist){
 	let newImgCon = document.createElement('div');
 	newImgCon.classList.add('img_con');
 
+  let newLink = document.createElement('a');
+  newLink.setAttribute('href', `javascript:alert('페이지 준비중입니다.');`);
+  newLink.setAttribute('onfocus', `this.blur()`);
+
 	let newImg = document.createElement('img');
 	newImg.setAttribute('src', artist[i].url);
 	newImg.setAttribute('alt', artist[i].name);
-
-	newImgCon.appendChild(newImg);
+  
+  
+	newLink.appendChild(newImg);
+  newImgCon.appendChild(newLink);
 	newContentsCon.appendChild(newImgCon);
 }
 
@@ -60,30 +66,7 @@ newScrollDown.appendChild(newArrow);
 qs(".main_con").appendChild(newScrollDown);
 /* slide html 동적 생성 끝 */
 
-/* const wheel = document.querySelector(".contents_con");
-const cards = document.querySelectorAll(".img_con");
-const total = cards.length;
-const slice = 2 * Math.PI / total;
-
-function setup() {
-  const radius = wheel.offsetWidth / 2;
-  const center = wheel.offsetWidth / 2;
-  
-  cards.forEach((card, index) => {
-    const angle = index * slice;
-    const inverseAngle = (index + total / 2) % total * slice;
-    const x = center + radius * Math.sin(angle);
-    const y = center - radius * Math.cos(angle);
-    const firstX = center + radius * Math.sin(0);
-    const inverseY = (center - radius * Math.cos(inverseAngle)) / 2;
-
-    card.style.transform = `translate(calc(${x - firstX}px - 50%), calc(${y - inverseY}px - 50%)) rotate(-${angle}rad)`;
-    card.querySelector("img").style.transform = `rotate(${angle*2}rad)`;
-  });
-}
-
-setup(); */
-
+/* img_con 배치 & scroll 이벤트 시작 */
 const wheel = document.querySelector(".contents_con");
 const cards = document.querySelectorAll(".img_con");
 const total = cards.length;
@@ -91,8 +74,8 @@ const slice = 2 * Math.PI / total;
 let scrollProgress = 0;
 
 function setup() {
-  const radius = wheel.offsetWidth / 2;
-  const center = wheel.offsetWidth / 2;
+  const radius = 900;
+  const center = 900;
 
   cards.forEach((card, index) => {
     const angle = index * slice;
@@ -108,8 +91,10 @@ function setup() {
 }
 
 function updateCards() {
-  const radius = wheel.offsetWidth / 2;
-  const center = wheel.offsetWidth / 2;
+  /* const radius = wheel.offsetWidth / 2;
+  const center = wheel.offsetWidth / 2; */
+  const radius = 900;
+  const center = 900;
   const scrollPosition = window.scrollY;
   scrollProgress = scrollPosition / (document.body.offsetHeight - window.innerHeight);
   
@@ -133,3 +118,4 @@ setup();
 
 window.addEventListener("scroll", updateCards);
 window.addEventListener("resize", setup);
+/* img_con 배치 & scroll 이벤트 끝 */
