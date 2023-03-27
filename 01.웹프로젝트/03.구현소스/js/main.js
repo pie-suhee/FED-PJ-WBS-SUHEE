@@ -74,8 +74,8 @@ const slice = 2 * Math.PI / total;
 let scrollProgress = 0;
 
 function setup() {
-  const radius = 900;
-  const center = 900;
+  const radius = 1500;
+  const center = 1500;
 
   cards.forEach((card, index) => {
     const angle = index * slice;
@@ -93,8 +93,8 @@ function setup() {
 function updateCards() {
   /* const radius = wheel.offsetWidth / 2;
   const center = wheel.offsetWidth / 2; */
-  const radius = 900;
-  const center = 900;
+  const radius = 1500;
+  const center = 1500;
   const scrollPosition = window.scrollY;
   scrollProgress = scrollPosition / (document.body.offsetHeight - window.innerHeight);
   
