@@ -117,5 +117,4 @@ function updateCards() {
 setup();
 
 window.addEventListener("scroll", updateCards);
-window.addEventListener("resize", setup);
 /* img_con 배치 & scroll 이벤트 끝 */
