@@ -106,7 +106,7 @@ body::-webkit-scrollbar {
 	bottom: -110vh;
 	outline: 1px dashed yellow;
 	transform: translateX(-50%);
-	transition: transform .4s;
+	transition: transform .4s cubic-bezier(0.72, 0.29, 0.96, 0.48);
 }
   
 .slide_con > .contents_con > .img_con {
