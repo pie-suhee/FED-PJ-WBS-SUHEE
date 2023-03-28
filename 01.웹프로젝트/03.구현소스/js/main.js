@@ -14,9 +14,13 @@ const navUl = create('ul');
 
 for(let i in nav.lnb){
 	let navLi = create('li');
-
   let navLink = create('a');
-  navLink.setAttribute('href', `javascript:alert('페이지 준비중입니다.');`);
+  if(nav.lnb[i].low === "#") {
+    navLink.setAttribute('href', `javascript:alert('페이지 준비중입니다.');`);
+  }
+  else {
+    navLink.setAttribute('href', `./${nav.lnb[i].low}.html`);
+  }
   navLink.setAttribute('onfocus', `this.blur()`);
 
   navLink.textContent = `${i}`;
@@ -99,8 +103,6 @@ let protUp = 0;
 let angle = 360/total; 
 let deg = 0;
 
-/* console.log(wheel.offsetWidth); */
-
 function setup(){
     wheel.style.bottom = `calc(-${wheel.offsetWidth}px + 10vh)`;
 
@@ -134,3 +136,38 @@ window.addEventListener("resize", setup);
 
 window.addEventListener("wheel", updateCards);
 /* img_con 배치 & scroll 이벤트 끝 */
+
+
+let startY = 0;
+let endY = 0;
+let isTouching = false;
+
+function handleTouchStart(event) {
+  isTouching = true;
+  startY = event.touches[0].clientY;
+}
+
+function handleTouchMove(event) {
+  if (!isTouching) {
+    return;
+  }
+
+  endY = event.touches[0].clientY;
+  let diffY = startY - endY;
+
+  if (diffY > 0) {
+    deg = deg + angle;
+  } else {
+    deg = deg - angle;
+  }
+
+  startY = endY;
+}
+
+function handleTouchEnd(event) {
+  isTouching = false;
+}
+
+window.addEventListener("touchstart", handleTouchStart);
+window.addEventListener("touchmove", handleTouchMove);
+window.addEventListener("touchend", handleTouchEnd);

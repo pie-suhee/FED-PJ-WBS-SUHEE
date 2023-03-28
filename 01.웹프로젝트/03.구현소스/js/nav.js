@@ -1,15 +1,15 @@
 const nav = {
     "lnb" : {
         "COMPANY" : {
-            "link" : "company.html",
+            "low" : "company",
             "bnb" : ["INTRODUCTION", "HISTORY", " CONTACT US"],
         },
         "ARTIST" : {
-            "link" : "#",
+            "low" : "#",
             "bnb" : ["ARTIST"],
         },
         "COMMUNITY" : {
-            "link" : "#",
+            "low" : "#",
             "bnb" : ["NOTICE", "NEWS"],
         },
     }

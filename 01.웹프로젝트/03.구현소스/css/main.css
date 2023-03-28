@@ -74,8 +74,11 @@ body::-webkit-scrollbar {
 	list-style: none;
 }
 
+#nav .lnb ul li {
+	padding-top: min(1vw,6px);
+}
+
 #nav .lnb a {
-	margin-top: min(1vw,6px);
 	text-decoration: none;
 	color: #ffffff;
 	font-size: min(4vw,24px);
