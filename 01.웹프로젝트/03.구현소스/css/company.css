@@ -5,7 +5,7 @@
 @import url(sub_nav.css);
 
 body {
-    background-color: #f7efe1;
+    background-color: #fffbf4;
 }
 
 #company section {
@@ -17,24 +17,71 @@ body {
 #company section.introduction {
     display: flex;
     height: auto;
+    position: relative;
+    z-index: 10;
 }
 
 #company section.introduction > div {
     flex:1;
 }
 
-#company section.introduction .contents_con {
+#company section.introduction > .contents_con {
     background: linear-gradient(180deg, rgba(255, 251, 244, 0.01) 0%, rgba(255, 251, 244, 0.5) 23.4%, #E8E2D1 73.41%);
 }
 
-#company section.introduction .contents_con img {
+#company section.introduction > .contents_con .img_con {
+    margin-top: 16vh;
+}
+
+#company section.introduction > .contents_con .img_con img {
     display: block;
     width: 60%;
     margin: 0 auto;
 }
 
-#company section.introduction .slide_con {
+#company section.introduction > .contents_con .text_con {
+    width: 70%;
+    margin: 7vh auto 9vh;
+}
+
+#company section.introduction > .contents_con .eng_text {
+    margin-top: 7vh;
+}
+
+#company section.introduction > .contents_con .kor_text .kor,
+#company section.introduction > .contents_con .eng_text .eng {
+    font-size: 1vw;
+    word-break: keep-all;
+}
+
+#company section.introduction > .slide_con > .contents_con {
+    width: 100%;
     height: 100vh;
     position: sticky;
     top: 0;
+}
+
+#company section.introduction > .contents_con .sign_con {
+    width: 100%;
+    background-color: #fffbf4;
+    position: sticky;
+    bottom: 0;
+    overflow: hidden;
+}
+
+#company section.introduction > .contents_con .sign_con ul {
+    display: flex;
+    width: 200%;
+    padding: 2vh 0;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    left: 0;
+    animation: fcap 10s linear infinite;
+}
+
+@keyframes fcap {
+    to{
+        left: -100%;
+    }
 }
