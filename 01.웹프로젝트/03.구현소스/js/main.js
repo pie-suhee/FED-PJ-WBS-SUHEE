@@ -51,21 +51,21 @@ allNavLi.forEach(ele=>{
 /* nav 끝 */
 
 /* slide html 동적 생성 시작 */
-let newSection = document.createElement('div');
+let newSection = create('div');
 newSection.classList.add('slide_con');
 
-let newContentsCon = document.createElement('div');
+let newContentsCon = create('div');
 newContentsCon.classList.add('contents_con');
 
 for(let i in artist){
-	let newImgCon = document.createElement('div');
+	let newImgCon = create('div');
 	newImgCon.classList.add('img_con');
 
-  let newLink = document.createElement('a');
+  let newLink = create('a');
   newLink.setAttribute('href', `javascript:alert('페이지 준비중입니다.');`);
   newLink.setAttribute('onfocus', `this.blur()`);
 
-	let newImg = document.createElement('img');
+	let newImg = create('img');
 	newImg.setAttribute('src', artist[i].url);
 	newImg.setAttribute('alt', artist[i].name);
   
@@ -79,11 +79,11 @@ newSection.appendChild(newContentsCon);
 
 qs(".main_con").appendChild(newSection);
 
-let newScrollDown = document.createElement('div');
+let newScrollDown = create('div');
 newScrollDown.classList.add('scroll_down');
 newScrollDown.textContent = 'Scroll down';
 
-let newArrow = document.createElement('div');
+let newArrow = create('div');
 newArrow.classList.add('arrow');
 
 newScrollDown.appendChild(newArrow);

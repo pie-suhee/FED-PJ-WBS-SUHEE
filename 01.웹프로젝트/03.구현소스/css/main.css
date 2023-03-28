@@ -10,9 +10,6 @@ body {
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
-body *{
-	font-family: "Flaviotte";
-}
 
 body::-webkit-scrollbar {
     display: none;
@@ -20,10 +17,6 @@ body::-webkit-scrollbar {
 
 #main {
 	height: 100vh;
-}
-
-#main > .contents_con {
-	height: 100%;
 }
 
 .main_con {

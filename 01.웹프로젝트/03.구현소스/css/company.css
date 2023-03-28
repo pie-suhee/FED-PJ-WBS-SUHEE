@@ -2,3 +2,14 @@
 
 @import url(reset.css);
 @import url(fonts.css);
+@import url(sub_nav.css);
+
+body {
+    background-color: #f7efe1;
+}
+
+#company section {
+    width: 100%;
+    height: 100vh;
+    border: 1px solid red;
+}
