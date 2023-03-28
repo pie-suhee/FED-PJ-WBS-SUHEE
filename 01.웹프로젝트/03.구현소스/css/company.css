@@ -22,6 +22,7 @@ body {
 
 #company section.introduction > div {
     flex:1;
+    width: 50%;
 }
 
 #company section.introduction > .contents_con {
@@ -65,7 +66,7 @@ body {
 }
 
 #company section.introduction > .contents_con .sign_con {
-    width: 200%;
+    width: 150%;
     background-color: #fffbf4;
     position: sticky;
     bottom: 0;
@@ -74,7 +75,7 @@ body {
 
 #company section.introduction > .contents_con .sign_con ul {
     display: flex;
-    width: 400%;
+    width: 300%;
     padding: 2vh 0;
     justify-content: space-around;
     align-items: center;
@@ -83,8 +84,13 @@ body {
     animation: fcap 20s linear infinite;
 }
 
+#company section.introduction > .contents_con .sign_con ul li {
+    font-size: 1vw;
+    font-weight: bold;
+}
+
 @keyframes fcap {
     to{
-        left: -200%;
+        left: -150%;
     }
 }
