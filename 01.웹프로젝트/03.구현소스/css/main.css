@@ -4,8 +4,7 @@
 @import url(fonts.css);
 
 body {
-    width: 100vw;
-    height: 600vh;
+    width: 100%;
 	background: url(../img/tree_bg.png) no-repeat fixed center/cover;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -98,15 +97,12 @@ body::-webkit-scrollbar {
   
 .slide_con > .contents_con {
 	position: fixed;
-	width: 70vw;
+	width: 150vw;
 	aspect-ratio: 1/1;
-  	/* height: 1vw; */
   	border-radius: 50%;
 	left: 50%;
-	bottom: -110vh;
-	outline: 1px dashed yellow;
 	transform: translateX(-50%);
-	transition: transform .4s cubic-bezier(0.72, 0.29, 0.96, 0.48);
+	transition: transform .4s cubic-bezier(0.63, 0.1, 0.68, 0.53);
 }
   
 .slide_con > .contents_con > .img_con {
@@ -118,10 +114,6 @@ body::-webkit-scrollbar {
   	transform-origin: center center;
   	transition: transform 0.5s;
 }
-/* .slide_con > .contents_con > .img_con:nth-child(1) {
-	transform: rotate(20deg) translateY(-300%) ;
-
-} */
   
 .slide_con > .contents_con > .img_con img {
 	display: block;
@@ -171,9 +163,15 @@ body::-webkit-scrollbar {
 	border-radius: 5px;
 }
 
-@media(max-width:1366px){
+@media(max-width:1200px){
 	.slide_con > .contents_con {
-		bottom: -1200px;
+		width: 200vw;
+	}
+}
+
+@media(max-width:768px){
+	.slide_con > .contents_con {
+		width: 300vw;
 	}
 }
 
@@ -199,11 +197,13 @@ body::-webkit-scrollbar {
 	}
 
 	.slide_con > .contents_con {
-		bottom: -1300px;
+		width: 450vw;
 	}
 
 	.slide_con > .contents_con > .img_con {
 		width: min(40vw,200px);
 		height: min(40vw,200px);
+		top: calc(50% - min(40vw,200px)/2);
+		left: calc(50% - min(40vw,200px)/2);
 	}
 }
