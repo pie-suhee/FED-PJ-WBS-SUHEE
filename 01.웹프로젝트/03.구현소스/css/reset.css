@@ -1,15 +1,15 @@
 @charset "utf-8";
 
 body {
-	width:100%;
-	margin:0 auto;
-	padding:0;
-	font-size:13px;
-	line-height:normal;
-	overflow-y:scroll;
-	-webkit-text-size-adjust:none;
-	-moz-text-size-adjust:none;
-	-ms-text-size-adjust:none;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+	font-size: 13px;
+	line-height: normal;
+	overflow-y: scroll;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
 }
 
 h1 {
@@ -18,63 +18,63 @@ h1 {
 }
 
 img {
-	border:none;
-	padding:0;
-	margin:0;
-	outline:none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	outline: none;
 }
 
 a {
-	border:none;
-	padding:0;
-	margin:0;
-	outline:none;
-	text-decoration:none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	outline: none;
+	text-decoration: none;
 }
 
 a:active,
 a:link,
 a:visited,
 a:hover {
-	color:#666666;
-	text-decoration:none;
+	color: #666666;
+	text-decoration: none;
 }
 
 ul {
-	list-style:none;
-	padding:0;
-	margin:0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 ul > li {
-	display:block;
+	display: block;
 }
 
 img.fx {
-	max-width:100%;
+	max-width: 100%;
 }
 
 td {
-	box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	-webkit-box-sizing:border-box;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 }
 
 input, select, textarea {
-	box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	-webkit-box-sizing:border-box;
-	margin:0; 
-	padding:0; 
-	outline:none; 
-	font-size:13px; 
-	color:#000000;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	margin: 0; 
+	padding: 0; 
+	outline: none; 
+	font-size: 13px; 
+	color: #000000;
 }
 
 input::placeholder,
 textarea::placeholder {
-	color:#000000;
-	opacity:1;
+	color: #000000;
+	opacity: 1;
 }
 
 input::-webkit-input-placeholder,
@@ -83,7 +83,7 @@ input:-moz-input-placeholder,
 textarea::-webkit-input-placeholder,
 textarea:-ms-input-placeholder,
 textarea:-moz-input-placeholder {
-	color:#000000;
+	color: #000000;
 }
 
 input[type=text],
@@ -94,30 +94,30 @@ input[type=image],
 input[type=button],
 input[type=submit],
 textarea {
-	border-radius:0; 
-	-moz-border-radius:0; 
-	-webkit-border-radius:0;
-	appearance:none;
-	-moz-appearance:none;
-	-webkit-appearance:none;
-	width:100%;
+	border-radius: 0; 
+	-moz-border-radius: 0; 
+	-webkit-border-radius: 0;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	width: 100%;
 }
 
 select {
-	border-radius:0; 
-	-moz-border-radius:0; 
-	-webkit-border-radius:0;
-	appearance:none;
-	-moz-appearance:none;
-	-webkit-appearance:none;
-	background-color:#ffffff;
-	background-image:url("/img/sub/select_arrow.png");
-	background-repeat:no-repeat;
-	background-position:100% 50%;
+	border-radius: 0; 
+	-moz-border-radius: 0; 
+	-webkit-border-radius: 0;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background-color: #ffffff;
+	/* background-image: url("/img/sub/select_arrow.png"); */
+	background-repeat: no-repeat;
+	background-position: 100% 50%;
 	width:100%;
 }
 
-select::-ms-expand {display:none;}
+select::-ms-expand {display: none;}
 
 .w_con {display: block;}
 .m_con {display: none;}

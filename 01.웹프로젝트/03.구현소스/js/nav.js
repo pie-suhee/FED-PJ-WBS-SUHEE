@@ -1,7 +1,7 @@
 const nav = {
     "lnb" : {
         "COMPANY" : {
-            "link" : "#",
+            "link" : "company.html",
             "bnb" : ["INTRODUCTION", "HISTORY", " CONTACT US"],
         },
         "ARTIST" : {
