@@ -98,31 +98,40 @@ body::-webkit-scrollbar {
   
 .slide_con > .contents_con {
 	position: fixed;
-  	height: 1vw;
+	width: 70vw;
+	aspect-ratio: 1/1;
+  	/* height: 1vw; */
   	border-radius: 50%;
 	left: 50%;
-	bottom: -130vh;
+	bottom: -110vh;
+	outline: 1px dashed yellow;
 	transform: translateX(-50%);
+	transition: transform .4s;
 }
   
 .slide_con > .contents_con > .img_con {
 	position: absolute;
+	top: calc(50% - min(20vw,150px)/2);
+	left: calc(50% - min(20vw,150px)/2);
   	width: min(20vw,150px);
   	height: min(20vw,150px);
-	top: 50%;
-	left: 50%;
   	transform-origin: center center;
   	transition: transform 0.5s;
 }
+/* .slide_con > .contents_con > .img_con:nth-child(1) {
+	transform: rotate(20deg) translateY(-300%) ;
+
+} */
   
 .slide_con > .contents_con > .img_con img {
 	display: block;
-  	width: 100%;
-  	height: 125%;
-  	object-fit: cover;
-  	border-radius: 10%;
-  	transform-origin: center center;
+	width: 100%;
+	height: 125%;
+	object-fit: cover;
+	border-radius: 10%;
+	transform-origin: center center;
 }
+
 
 /* SCROLL DOWN */
 .scroll_down {
