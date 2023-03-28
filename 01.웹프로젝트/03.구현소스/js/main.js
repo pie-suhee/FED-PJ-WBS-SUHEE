@@ -96,8 +96,8 @@ qs(".main_con").appendChild(newScrollDown);
 /* slide html 동적 생성 끝 */
 
 /* img_con 배치 & scroll 이벤트 시작 */
-const wheel = document.querySelector(".contents_con");
-const cards = document.querySelectorAll(".img_con");
+const wheel = qs(".contents_con");
+const cards = qsa(".img_con");
 const total = cards.length;
 let protUp = 0;
 let angle = 360/total; 
@@ -121,6 +121,7 @@ function updateCards() {
     }, 300);
 
     let dir = event.wheelDelta;
+    console.log(dir);
 
     if(dir < 0)  deg = deg - angle;
     else deg = deg + angle;
@@ -133,41 +134,5 @@ function updateCards() {
 
 setup();
 window.addEventListener("resize", setup);
-
 window.addEventListener("wheel", updateCards);
 /* img_con 배치 & scroll 이벤트 끝 */
-
-
-let startY = 0;
-let endY = 0;
-let isTouching = false;
-
-function handleTouchStart(event) {
-  isTouching = true;
-  startY = event.touches[0].clientY;
-}
-
-function handleTouchMove(event) {
-  if (!isTouching) {
-    return;
-  }
-
-  endY = event.touches[0].clientY;
-  let diffY = startY - endY;
-
-  if (diffY > 0) {
-    deg = deg + angle;
-  } else {
-    deg = deg - angle;
-  }
-
-  startY = endY;
-}
-
-function handleTouchEnd(event) {
-  isTouching = false;
-}
-
-window.addEventListener("touchstart", handleTouchStart);
-window.addEventListener("touchmove", handleTouchMove);
-window.addEventListener("touchend", handleTouchEnd);
