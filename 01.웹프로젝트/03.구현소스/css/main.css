@@ -58,7 +58,7 @@ body::-webkit-scrollbar {
 	margin-top: min(3vw,3vh);
 }
 
-#nav .gnb {
+#nav .lnb {
 	position: relative;
 	background: linear-gradient(180deg, #ABB553 0%, rgba(129, 125, 43, 0.5) 100%);
 	border-radius: 40px;
@@ -73,7 +73,7 @@ body::-webkit-scrollbar {
 	opacity: 0;
 }
 
-#nav .gnb ul {
+#nav .lnb ul {
 	position: relative;
 	display: flex;
 	margin: 0;
@@ -81,7 +81,7 @@ body::-webkit-scrollbar {
 	list-style: none;
 }
 
-#nav .gnb a {
+#nav .lnb a {
 	margin-top: min(1vw,6px);
 	text-decoration: none;
 	color: #ffffff;
@@ -92,7 +92,7 @@ body::-webkit-scrollbar {
 	transition: color 0.2s;
 }
 
-#nav .gnb a:hover {
+#nav .lnb a:hover {
 	color: #000000;
 	transition-delay: 0.2s;
 }
@@ -187,11 +187,11 @@ body::-webkit-scrollbar {
 		margin-top: max(3vw,3vh);
 	}
 
-	#nav .gnb a {
+	#nav .lnb a {
 		font-size: max(3vw,16px);
 	}
 
-	#nav .gnb a:hover {
+	#nav .lnb a:hover {
 		color: #ffffff;
 	}
 
