@@ -10,7 +10,6 @@ body {
 
 #company section {
     width: 100%;
-    height: 100vh;
     outline: 1px solid red;
 }
 
@@ -56,13 +55,111 @@ body {
     word-break: keep-all;
 }
 
-#company section.introduction > .slide_con > .contents_con {
+#company section.introduction > .slide_con > .poster_slide {
     width: 100%;
     height: 100vh;
-    background-color: #fffbf4;
     position: sticky;
     top: 0;
+    overflow: hidden;
     z-index: 20;
+}
+
+#company section.introduction > .slide_con > .poster_slide > .swiper-container {
+    height: 100%;
+}
+
+#company section.introduction > .slide_con > .poster_slide > .swiper-container > .swiper-wrapper > .swiper-slide {
+    position: relative;
+}
+
+#company section.introduction > .slide_con > .poster_slide > .swiper-container > .swiper-wrapper > .swiper-slide > .bg_con {
+    width: 100%;
+    height: 100vh;
+    filter: brightness(40%);
+
+}
+
+#company section.introduction > .slide_con > .poster_slide > .swiper-container > .swiper-wrapper > .swiper-slide > .img_con {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-55%);
+}
+
+#company section.introduction > .slide_con > .poster_slide > .swiper-container > .swiper-wrapper > .swiper-slide img {
+    width: 100%;
+    object-fit: cover;
+}
+
+#company section.introduction > .slide_con > .poster_slide > .swiper-container > .swiper-wrapper > .swiper-slide > .bg_con img {
+    height: 100vh;
+}
+
+#company section.introduction > .slide_con > .poster_slide > .swiper-pagination {
+    position: absolute;
+    bottom: 10vh;
+}
+
+#company section.introduction > .slide_con > .poster_slide > .swiper-pagination span {
+    position: absolute;
+    font-size: 1.5vw;
+    color: #ffffff;
+}
+
+#company section.introduction > .slide_con > .poster_slide > .swiper-pagination .swiper-pagination-current {   
+    left: 15%;
+}
+
+#company section.introduction > .slide_con > .poster_slide > .swiper-pagination .swiper-pagination-total {
+    right: 15%;
+}
+
+.swiper-progress-bar {
+    display: block;
+    width: 55%;
+    height: 2vh;
+    position: absolute;
+    left: 50%;
+    bottom: 2.6vh;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.swiper-progress-bar .slide_progress-bar {
+    position: absolute;
+    width: auto;
+    height: 2vh;
+    background: #fffbf4;
+    border-radius: 50px;
+    box-shadow: 10px 10px 4px 2px rgba(0, 0, 0, 0.5);
+    clear: both;
+    opacity: 0;
+    bottom: 45px;
+    left: 0;
+    right: 0;
+}
+
+.swiper-progress-bar .slide_progress-bar:after {
+    content: "";
+    width: 0;
+    height: 100%;
+    background: #8cc63e;
+    border-radius: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.1s width linear;
+}
+
+.swiper-progress-bar.active .slide_progress-bar {
+    opacity: 1;
+}
+
+.swiper-progress-bar.animate .slide_progress-bar:after {
+    transition: width linear;
+    transition-delay: unset;
+    width: 100%;
+    transition-duration: 5s;
 }
 
 #company section.introduction > .contents_con .sign_con {
