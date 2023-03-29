@@ -10,7 +10,6 @@ body {
 
 #company section {
     width: 100%;
-    outline: 1px solid red;
 }
 
 #company section.introduction {
@@ -97,11 +96,14 @@ body {
 
 #company section.introduction > .slide_con > .poster_slide > .swiper-pagination {
     position: absolute;
+    height: 2vh;
     bottom: 10vh;
 }
 
 #company section.introduction > .slide_con > .poster_slide > .swiper-pagination span {
     position: absolute;
+    top: 50%;
+    transform: translateY(calc(-50% + 0.2vw));
     font-size: 1.5vw;
     color: #ffffff;
 }
@@ -120,7 +122,7 @@ body {
     height: 2vh;
     position: absolute;
     left: 50%;
-    bottom: 2.6vh;
+    bottom: 10vh;
     transform: translateX(-50%);
     z-index: 1;
 }
@@ -134,7 +136,6 @@ body {
     box-shadow: 10px 10px 4px 2px rgba(0, 0, 0, 0.5);
     clear: both;
     opacity: 0;
-    bottom: 45px;
     left: 0;
     right: 0;
 }
@@ -186,8 +187,111 @@ body {
     font-weight: bold;
 }
 
+#company section.history {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+#company section.history::after {
+    content:"";
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(255, 251, 244, 0.3) 10%, rgba(255, 251, 244, 0.8) 50%, #fffbf4 90%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#company section.contactus {
+    position: relative;
+    overflow: hidden;
+}
+
+#company section.contactus > .top_bg_con {
+    width: 80vw;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+#company section.contactus > .top_bg_con img {
+    animation: topBgRotate 5s ease-in-out infinite alternate;
+}
+
+#company section.contactus > .bottom_bg_con {
+    width: 80vw;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) scalex(-1) scaleY(-1);
+}
+
+#company section.contactus > .bottom_bg_con img {
+    animation: topBgRotate 5s ease-in-out infinite alternate-reverse;
+}
+
+#company section.contactus > .contents_con {
+    padding: 20vh 0;
+}
+
+#company section.contactus > .contents_con > .title_con {
+    width: 30vw;
+    margin: 0 auto;
+}
+
+#company section.contactus > .contents_con > .title_con img {
+    width: 100%;
+}
+
+#company section.contactus > .contents_con > .map_con {
+    width: 100%;
+    height: 59vh;
+    margin-top: 20vh;
+}
+
+#company section.contactus > .contents_con > .map_con iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+#company section.contactus > .contents_con > .info_con {
+    width: 62.5vw;
+    margin: 0 auto;
+    margin-top: 10vh;
+}
+
+#company section.contactus > .contents_con > .info_con > ul {
+    display: flex;
+    padding: 5vh 0;
+    justify-content: space-between;
+    border-top: 1px dashed #000000;
+    border-bottom: 1px dashed #000000;
+}
+
+#company section.contactus > .contents_con > .info_con > ul > li > .title_con > span {
+    font-size: 1.5vw;
+}
+
+#company section.contactus > .contents_con > .info_con > ul > li > .text_con span {
+    display: inline-block;
+    margin-top: 2vh;
+    font-size: 0.8vw;
+}
+
 @keyframes fcap {
     to{
         left: -150%;
+    }
+}
+
+@keyframes topBgRotate {
+    0%{
+        transform: translate3d(50px,-50px,0px) rotate(-5deg) skewX(10deg);
+    }
+    100%{
+        transform: translate3d(0px,0px,0px) rotate(0deg) skewX(0deg);
     }
 }

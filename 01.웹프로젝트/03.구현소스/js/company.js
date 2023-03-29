@@ -5,7 +5,7 @@ const qsa = (x) => document.querySelectorAll(x);
 const create = (x) => document.createElement(x);
 
 /* nav html 동적 생성 시작 */
-const lnb = qs('.lnb');
+/* const lnb = qs('.lnb');
 const mbg = create('div');
 mbg.classList.add('mbg');
 
@@ -25,7 +25,7 @@ for(let i in nav.lnb){
 }
 
 lnb.appendChild(mbg);
-lnb.appendChild(navUl);
+lnb.appendChild(navUl); */
 /* nav html 동적 생성 끝 */
 
 /* poster 슬라이드 시작 */
