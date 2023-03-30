@@ -2,15 +2,27 @@ const nav = {
     "lnb" : {
         "COMPANY" : {
             "low" : "company",
-            "bnb" : ["INTRODUCTION", "HISTORY", " CONTACT US"],
+            "connect" : "company_introduction",
+            "bnb" : {
+                "INTRODUCTION" : "company_introduction",
+                "HISTORY" : "company_history",
+                "CONTACT US" : "company_contactus",
+            },
         },
         "ARTIST" : {
-            "low" : "#",
-            "bnb" : ["ARTIST"],
+            "low" : "artist",
+            "connect" : "#",
+            "bnb" : {
+                "ARTIST" : "artist",
+            },
         },
         "COMMUNITY" : {
-            "low" : "#",
-            "bnb" : ["NOTICE", "NEWS"],
+            "low" : "community",
+            "connect" : "#",
+            "bnb" : {
+                "NOTICE" : "notice",
+                "NEWS" : "news",
+            },
         },
     }
 }

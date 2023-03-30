@@ -15,11 +15,12 @@ const navUl = create('ul');
 for(let i in nav.lnb){
 	let navLi = create('li');
   let navLink = create('a');
-  if(nav.lnb[i].low === "#") {
+  if(nav.lnb[i].connect === "#") {
     navLink.setAttribute('href', `javascript:alert('페이지 준비중입니다.');`);
   }
   else {
-    navLink.setAttribute('href', `./${nav.lnb[i].low}.html`);
+    console.log(nav.lnb[i].low);
+    navLink.setAttribute('href', `./${nav.lnb[i].low}/${nav.lnb[i].connect}.html`);
   }
   navLink.setAttribute('onfocus', `this.blur()`);
 

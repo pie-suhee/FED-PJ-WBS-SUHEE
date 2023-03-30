@@ -71,3 +71,24 @@ $(document).ready(function () {
   });
 });
 /* poster 슬라이드 끝 */
+
+/* timeline 슬라이드 시작 */
+let timelineSwiper = new Swiper ('.timelineSwiper', {
+  direction: 'vertical',
+  loop: false,
+  speed: 1600,
+  pagination: '.swiper-pagination',
+  paginationBulletRender: function (swiper, index, className) {
+    var year = document.querySelectorAll('.swiper-slide')[index].getAttribute('data-year');
+    return '<span class="' + className + '">' + year + '</span>';
+  },
+  paginationClickable: true,
+  nextButton: '.swiper-button-next',
+  prevButton: '.swiper-button-prev',
+  breakpoints: {
+    768: {
+      direction: 'horizontal',
+    }
+  }
+});
+/* timeline 슬라이드 끝 */
