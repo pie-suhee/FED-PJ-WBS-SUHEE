@@ -202,7 +202,15 @@ body::-webkit-scrollbar {
 }
 
 #company section.history > .bg_con {
+    width: 100%;
+    height: 100%;
     position: absolute;
+}
+
+#company section.history > .bg_con img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 #company section.history::after {
@@ -375,7 +383,7 @@ body::-webkit-scrollbar {
             transform: translateX(3px);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1000px) {
     #company section.history::after {
         background: linear-gradient(270deg, rgba(0, 0, 0, 0.7) 10%, rgba(255, 251, 244, 0.8) 50%, #fffbf4 90%);
     }
