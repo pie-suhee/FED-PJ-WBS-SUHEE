@@ -126,15 +126,3 @@ select {
 }
 
 select::-ms-expand {display: none;}
-
-.w_con {display: block;}
-.m_con {display: none;}
-
-.w_img {display: inline; width:100%;}
-.m_img {display: none;}
-
-.w_br {display: block;}
-.m_br {display: none;}
-
-.w_bar {display: inline-block;}
-.m_bar {display: none;}

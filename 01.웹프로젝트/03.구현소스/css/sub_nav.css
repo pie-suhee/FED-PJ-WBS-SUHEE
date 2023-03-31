@@ -1,7 +1,16 @@
 @charset "utf-8";
 
-@import url(reset.css);
-@import url(fonts.css);
+.w_con {display: block;}
+.m_con {display: none;}
+
+.w_img {display: inline; width:100%;}
+.m_img {display: none;}
+
+.w_br {display: block;}
+.m_br {display: none;}
+
+.w_bar {display: inline-block;}
+.m_bar {display: none;}
 
 #top {
 	position: fixed;
@@ -12,6 +21,7 @@
 
 #top .top {
     display: flex;
+	gap: 1.5vw;
     align-items: center;
 }
 
@@ -29,4 +39,219 @@
 #top .logo > a img {
 	display: block;
 	width: 100%;
+}
+
+#w_nav {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+#w_nav .lnb > .s_title {
+	position: relative;
+}
+
+#w_nav .lnb > .s_title > a {
+	display: block;
+	margin-top: 8px;
+	font-size: 32px;
+}
+
+#w_nav .lnb > .s_title > .ss_title {
+	position: absolute;
+	visibility: hidden;
+  	opacity: 0;
+  	transition: visibility 0s linear 0.5s, opacity 0.5s ease-in-out;
+}
+
+#w_nav .lnb > .s_title:hover > .ss_title {
+	visibility: visible;
+  	opacity: 1;
+  	transition-delay: 0s;
+}
+
+#w_nav .lnb > .s_title > .ss_title > ul > li {
+	margin-top: 10px;
+}
+
+#w_nav .lnb > .s_title > .ss_title a {
+	font-size: 18px;
+	letter-spacing: 0.5px;
+}
+
+#w_nav .lnb > .s_title > .ss_title a:hover {
+	color: #6b741b;
+}
+
+#w_nav .bnb {
+	display: flex;
+	align-items: center;
+}
+
+#w_nav .bnb > ul {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+#w_nav .bnb > ul > li > a {
+	display: block;
+	margin-top: 8px;
+	font-size: 18px;
+}
+
+#w_nav .bnb > ul > li > a:hover,
+#w_nav .bnb > ul > li > a.on {
+	color: #6b741b;
+}
+
+@media screen and (max-width: 1000px) {
+	.w_con {display:none;}
+	.m_con {display:block;}
+
+	.w_img {display:none;}
+	.m_img {display:inline-block; width:100%;}
+
+	.w_br {display:none;}
+	.m_br {display:inline;}
+
+	.w_bar {display:none;}
+	.m_bar {display:inline;}
+
+	#top {
+		width: 100%;
+		padding-top: 4vh;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	#top .top {
+		display: block;
+		position: relative;
+	}
+
+	#top .btn_con {
+		position: absolute;
+		right: 5%;
+		transform: translateY(-50%);
+	}
+
+	#top .btn_con a {
+		display: block;
+		font-size: 24px;
+		color: #000000;
+	}
+
+	#m_nav {
+		display: none;
+		position: absolute;
+	}
+
+	#top .btn_con {
+		position: absolute;
+		top: 50%;
+		right: 5vw;
+		transform: translateY(-50%);
+	}
+	
+	.top .btn_con a {
+		font-size: min(26px, 6vw);
+		color:#ffffff;
+	}
+	
+	.top .btn_con a.black {
+		color:#000000;
+	}
+	
+	#nav_bg {
+		display: none;
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		background-color: transparent;
+		position: fixed;
+		top: 0;
+		right: 0;
+		z-index: 110;
+	}
+	
+	#m_nav {
+		display: none;
+		width: 100%;
+		margin: 0 auto;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 110;
+		animation: open 0.5s forwards;
+	}
+	
+	#m_nav.open {
+		animation: open 0.5s forwards;
+	}
+	
+	#m_nav.close {
+		animation: close 0.5s forwards;
+	}
+	
+	.left_nav, .right_nav {
+		height: 100%;
+	}
+	
+	#m_nav > .contents_con {
+		display: flex;
+		width: 100%; 
+	}
+	
+	#m_nav > .contents_con > .left_nav {
+		width: 70%;
+		height: 100vh;
+	}
+	
+	#m_nav > .contents_con > .right_nav {
+		width: 30%;
+		height: 100vh;
+		background-color: #ffffff;
+		position: relative;
+	}
+	
+	#m_nav > .contents_con > .right_nav .close_btn {
+		position: absolute;
+		top: calc(2vh + 50px);
+		right: 5vw;
+		transform: translateY(-50%);
+	}
+	
+	#m_nav > .contents_con > .right_nav .close_btn a {
+		font-size: min(26px, 6vw);
+		color: #000000;
+	}
+	
+	#m_nav > .contents_con > .right_nav .list_con {
+		width: 100%;
+		padding-left: 20%;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		box-sizing: border-box;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+	}
+	
+	#m_nav > .contents_con > .right_nav .list_con li {
+		margin-top: 50px;
+	}
+	
+	#m_nav > .contents_con > .right_nav .list_con li a {
+		display: inline;
+		font-size: min(34px, 12vw);
+		color: #000000;
+	}
+	
+	#m_nav > .contents_con > .right_nav .list_con li:first-child{
+		margin-top: 0;
+	}
 }

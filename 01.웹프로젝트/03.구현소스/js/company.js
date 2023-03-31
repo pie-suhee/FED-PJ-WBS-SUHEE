@@ -5,28 +5,13 @@ const qsa = (x) => document.querySelectorAll(x);
 const create = (x) => document.createElement(x);
 
 /* nav html 동적 생성 시작 */
-/* const lnb = qs('.lnb');
-const mbg = create('div');
-mbg.classList.add('mbg');
 
-const navUl = create('ul');
-
-for(let i in nav.lnb){
-	let navLi = create('li');
-
-  let navLink = create('a');
-  navLink.setAttribute('href', `javascript:alert('페이지 준비중입니다.');`);
-  navLink.setAttribute('onfocus', `this.blur()`);
-
-  navLink.textContent = `${i}`;
-  
-  navLi.appendChild(navLink);
-	navUl.appendChild(navLi);
-}
-
-lnb.appendChild(mbg);
-lnb.appendChild(navUl); */
 /* nav html 동적 생성 끝 */
+
+/* nav 시작 */
+const logo = qs("#top .m_con .logo img");
+qs("#top .btn_con").style.top =`${logo.offsetHeight/2}px`;
+/* nav 끝 */
 
 /* poster 슬라이드 시작 */
 $(document).ready(function () {
