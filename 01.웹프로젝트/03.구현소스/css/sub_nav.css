@@ -12,17 +12,14 @@
 .w_bar {display: inline-block;}
 .m_bar {display: none;}
 
-#top {
+#top .w_con .top {
+    display: flex;
+	gap: 1.5vw;
+    align-items: center;
 	position: fixed;
 	top: 4vh;
 	left: 3vw;
 	z-index: 100;
-}
-
-#top .top {
-    display: flex;
-	gap: 1.5vw;
-    align-items: center;
 }
 
 #top .logo {
@@ -118,18 +115,15 @@
 	.w_bar {display:none;}
 	.m_bar {display:inline;}
 
-	#top {
+	#top .m_con .top {
+		display: block;
 		width: 100%;
 		padding-top: 4vh;
 		position: absolute;
 		top: 0;
 		left: 50%;
 		transform: translateX(-50%);
-	}
-
-	#top .top {
-		display: block;
-		position: relative;
+		z-index: 100;
 	}
 
 	#top .logo {
@@ -152,12 +146,11 @@
 	#m_nav {
 		display: none;
 		width: 100%;
-		margin: 0 auto;
+		height: 100vh;
 		position: fixed;
 		top: 0;
 		left: 0;
-		right: 0;
-		z-index: 110;
+		z-index: 100;
 		animation: open 0.5s ease-in-out;
 	}
 	

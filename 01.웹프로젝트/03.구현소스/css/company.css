@@ -594,22 +594,22 @@ body::-webkit-scrollbar {
 
 @media (max-width: 1000px) {
     #company section.contactus > .contents_con {
-        padding: 18.6vh 0 4vh 0;
+        padding: 18vh 0 5vh 0;
     }
 
     #company section.contactus > .contents_con > .title_con {
-        width: 60vw;
+        width: 50vw;
     }
 
     #company section.contactus > .contents_con > .map_con {
         height: 30vh;
-        margin-top: 4vh;
+        margin-top: 5vh;
     }
 
     #company section.contactus > .contents_con > .info_con {
         width: 80vw;
         margin: 0 auto;
-        margin-top: 4vh;
+        margin-top: 5vh;
     }
     
     #company section.contactus > .contents_con > .info_con > ul {

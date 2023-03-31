@@ -10,14 +10,13 @@ const create = (x) => document.createElement(x);
 
 /* nav 시작 */
 const logo = qs("#top .m_con .logo img");
-const navCloseBtn = qs("#m_nav > .contents_con .close_btn");
 
-navCloseBtn.style.top = `calc(4vh + ${logo.offsetHeight/2}px)`;
-qs("#top .btn_con").style.top =`${logo.offsetHeight/2}px`;
+qs("#m_nav > .contents_con .close_btn").style.top = `calc(4vh + ${logo.offsetHeight/2}px)`;
+qs("#top .btn_con").style.top =`calc(4vh + ${logo.offsetHeight/2}px)`;
 
 window.addEventListener('resize', function() {
-  navCloseBtn.style.top = `calc(4vh + ${logo.offsetHeight/2}px)`;
-  qs("#top .btn_con").style.top =`${logo.offsetHeight/2}px`;
+  qs("#m_nav > .contents_con .close_btn").style.top = `calc(4vh + ${logo.offsetHeight/2}px)`;
+  qs("#top .btn_con").style.top =`calc(4vh + ${logo.offsetHeight/2}px)`;
 });
 /* nav 끝 */
 

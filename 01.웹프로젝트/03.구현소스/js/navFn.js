@@ -3,9 +3,6 @@ const qs = (x) => document.querySelector(x);
 function navFn() {
     const m_nav = qs("#m_nav");
     const navBtn = qs(".btn_con > a");
-    const height = `${document.documentElement.scrollHeight}px`;
-    
-    /* qs("#m_nav > .contents_con").style.height = height; */
   
     if (m_nav.style.display === "" || m_nav.style.display === "none") {
         m_nav.style.display = "block";

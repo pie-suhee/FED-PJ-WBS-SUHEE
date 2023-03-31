@@ -19,7 +19,6 @@ for(let i in nav.lnb){
     navLink.setAttribute('href', `javascript:alert('페이지 준비중입니다.');`);
   }
   else {
-    console.log(nav.lnb[i].low);
     navLink.setAttribute('href', `./${nav.lnb[i].low}/${nav.lnb[i].connect}.html`);
   }
   navLink.setAttribute('onfocus', `this.blur()`);
