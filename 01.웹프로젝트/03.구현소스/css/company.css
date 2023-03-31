@@ -82,7 +82,6 @@ body::-webkit-scrollbar {
     width: 100%;
     height: 100vh;
     filter: brightness(40%);
-
 }
 
 #company section.introduction > .slide_con > .poster_slide > .swiper-container > .swiper-wrapper > .swiper-slide > .img_con {
@@ -192,6 +191,43 @@ body::-webkit-scrollbar {
 #company section.introduction > .contents_con .sign_con ul li {
     font-size: 1vw;
     font-weight: bold;
+}
+
+@media (max-width: 1000px) {
+    #company section.introduction {
+        display: block;
+    }
+
+    #company section.introduction > div {
+        width: 100%;
+    }
+
+    #company section.introduction > .contents_con .text_con {
+        width: 80%;
+        margin: 7vh auto;
+    }
+
+    #company section.introduction > .slide_con > .poster_slide {
+        height: auto;
+        position: relative;
+    }
+
+    #company section.introduction > .contents_con .kor_text .kor,
+    #company section.introduction > .contents_con .eng_text .eng {
+        font-size: 3.5vw;
+    }
+
+    #company section.introduction > .contents_con .sign_con {
+        width: 200%;
+    }
+    
+    #company section.introduction > .contents_con .sign_con ul {
+        width: 400%;
+    }
+    
+    #company section.introduction > .contents_con .sign_con ul li {
+        font-size: 3.5vw;
+    }
 }
 
 /* history */
@@ -537,9 +573,63 @@ body::-webkit-scrollbar {
     font-size: 0.8vw;
 }
 
+@media (max-width: 1000px) {
+    #company section.contactus > .contents_con {
+        padding: 18.6vh 0 4vh 0;
+    }
+
+    #company section.contactus > .contents_con > .title_con {
+        width: 60vw;
+    }
+
+    #company section.contactus > .contents_con > .map_con {
+        height: 30vh;
+        margin-top: 4vh;
+    }
+
+    #company section.contactus > .contents_con > .info_con {
+        width: 80vw;
+        margin: 0 auto;
+        margin-top: 4vh;
+    }
+    
+    #company section.contactus > .contents_con > .info_con > ul {
+        display: block;
+        padding: 2.5vh 0;
+        justify-content: space-between;
+        border-top: 1px dashed #000000;
+        border-bottom: 1px dashed #000000;
+    }
+
+    #company section.contactus > .contents_con > .info_con > ul > li {
+        margin-top: 2vh;
+    }
+    
+    #company section.contactus > .contents_con > .info_con > ul > li > .title_con > span {
+        font-size: 5vw;
+    }
+    
+    #company section.contactus > .contents_con > .info_con > ul > li > .text_con span {
+        display: inline-block;
+        margin-top: 1vh;
+        font-size: 0.8vw;
+    }
+
+    #company section.contactus > .contents_con > .info_con > ul > li:nth-child(1) {
+        margin-top: 0;
+    }
+}
+
+/* keyframe */
 @keyframes fcap {
     to{
         left: -150%;
+    }
+}
+
+@keyframes mfcap {
+    to{
+        left: -200%;
     }
 }
 
