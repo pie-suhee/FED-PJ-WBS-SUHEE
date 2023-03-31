@@ -198,6 +198,11 @@ body::-webkit-scrollbar {
         display: block;
     }
 
+    #company section.introduction > .contents_con {
+        width: 100%;
+        overflow: hidden;
+    }
+
     #company section.introduction > div {
         width: 100%;
     }
@@ -227,6 +232,20 @@ body::-webkit-scrollbar {
     
     #company section.introduction > .contents_con .sign_con ul li {
         font-size: 3.5vw;
+    }
+
+    #company section.introduction > .slide_con > .poster_slide > .swiper-pagination span {
+        font-size: 4vw;
+    }
+}
+
+@media (max-width: 768px) {
+    #company section.introduction > .slide_con > .poster_slide > .swiper-container > .swiper-wrapper > .swiper-slide > .bg_con {
+        height: 70vh;
+    }
+
+    #company section.introduction > .slide_con > .poster_slide > .swiper-container > .swiper-wrapper > .swiper-slide > .bg_con img {
+        height: 70vh;
     }
 }
 
