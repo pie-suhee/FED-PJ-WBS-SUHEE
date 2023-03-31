@@ -11,6 +11,10 @@ const create = (x) => document.createElement(x);
 /* nav 시작 */
 const logo = qs("#top .m_con .logo img");
 qs("#top .btn_con").style.top =`${logo.offsetHeight/2}px`;
+
+window.addEventListener('resize', function() {
+  qs("#top .btn_con").style.top =`${logo.offsetHeight/2}px`;
+});
 /* nav 끝 */
 
 /* poster 슬라이드 시작 */
@@ -71,7 +75,7 @@ let timelineSwiper = new Swiper ('.timelineSwiper', {
   nextButton: '.swiper-button-next',
   prevButton: '.swiper-button-prev',
   breakpoints: {
-    768: {
+    1000: {
       direction: 'horizontal',
     }
   }
