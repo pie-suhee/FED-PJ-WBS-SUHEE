@@ -11,22 +11,156 @@
     
     <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
     <script src="../js/swiper.js"></script>
+    <script src='../js/navFn.js'></script>
     <script type="module" src='../js/company.js'></script>
 </head>
 <body>
     <div id="top">
-        <header class="top">
-            <h1 class="logo">
-                <a href="../index.html">
-                    <img src="../img/sub_logo.png" alt="로고">
-                </a>
-            </h1>
-        
-            <div id="nav">
-                <nav class="lnb"></nav>
-                <nav class="bnb"></nav>
+        <div class="w_con">
+            <div class="top">
+                <h1 class="logo">
+                    <a href="../index.html">
+                        <img src="../img/sub_logo.png" alt="로고">
+                    </a>
+                </h1>
+            
+                <div id="w_nav">
+                    <nav class="lnb">
+                        <div class="s_title">
+                            <a href="../company/company_introduction.html">
+                                COMPANY
+                            </a>
+                            <div class="ss_title">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:alert('페이지 준비중입니다.');">
+                                            ARTIST
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:alert('페이지 준비중입니다.');">
+                                            COMMUNITY
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <nav class="bnb">
+                        <ul>
+                            <li>
+                                <a href="../company/company_introduction.html" class="on">
+                                    INTRODUCTION
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../company/company_history.html">
+                                    HISTORY
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../company/company_contactus.html">
+                                    CONTACT US
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-        </header>
+        </div>
+
+        <div class="m_con">
+            <div class="top">
+                <h1 class="logo">
+                    <a href="../index.html">
+                        <img src="../img/sub_logo.png" alt="로고">
+                    </a>
+                </h1>
+
+                <div class="btn_con">
+                    <a href="#" onclick="navFn();">
+                        MENU
+                    </a>
+                </div>
+
+                <div id="nav_bg" onclick="navFn();"></div>
+                <nav id="m_nav">
+                    <div class="contents_con">
+                        <div class="left_con left_nav" onclick="navFn();"></div>
+                        <div class="right_con right_nav">
+                            <div class="contents_con">
+                                <div class="close_btn">
+                                    <a href="#" onclick="navFn();">
+                                        CLOSE
+                                    </a>
+                                </div>
+
+                                <div class="list_con">
+                                    <ul>
+                                        <li>
+                                            <a href="../company/company_introduction.html">
+                                                COMPANY
+                                            </a>
+
+                                            <div class="ss_title">
+                                                <ul>
+                                                    <li>
+                                                        <a href="../company/company_introduction.html">
+                                                            INTRODUCTION
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="../company/company_history.html">
+                                                            HISTORY
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="../company/company_contactus.html">
+                                                            CONTACT US
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <a href="javascript:alert('페이지 준비중입니다.');">
+                                                ARTIST
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="javascript:alert('페이지 준비중입니다.');">
+                                                CONTACT US
+                                            </a>
+
+                                            <div class="ss_title">
+                                                <ul>
+                                                    <li>
+                                                        <a href="javascript:alert('페이지 준비중입니다.');">
+                                                            NOTICE
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="javascript:alert('페이지 준비중입니다.');">
+                                                            NEWS
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
     </div>
 
     <main id="company">
