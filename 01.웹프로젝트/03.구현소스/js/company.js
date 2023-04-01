@@ -9,16 +9,46 @@ const create = (x) => document.createElement(x);
 /* nav html 동적 생성 끝 */
 
 /* nav 시작 */
-const logo = qs("#top .m_con .logo img");
+const body = qs("body");
+const w_logo = qs("#top .w_con .logo img");
+const m_logo = qs("#top .m_con .logo img");
 
-qs("#m_nav > .contents_con .close_btn").style.top = `calc(4vh + ${logo.offsetHeight/2}px)`;
-qs("#top .btn_con").style.top =`calc(4vh + ${logo.offsetHeight/2}px)`;
+qs("#m_nav > .contents_con .close_btn").style.top = `calc(4vh + ${m_logo.offsetHeight/2}px)`;
+qs("#top .btn_con").style.top =`calc(4vh + ${m_logo.offsetHeight/2}px)`;
 
 window.addEventListener('resize', function() {
-  qs("#m_nav > .contents_con .close_btn").style.top = `calc(4vh + ${logo.offsetHeight/2}px)`;
-  qs("#top .btn_con").style.top =`calc(4vh + ${logo.offsetHeight/2}px)`;
+  qs("#m_nav > .contents_con .close_btn").style.top = `calc(4vh + ${m_logo.offsetHeight/2}px)`;
+  qs("#top .btn_con").style.top =`calc(4vh + ${m_logo.offsetHeight/2}px)`;
 });
 /* nav 끝 */
+
+/* history 배치 시작 */
+const year = qs(".timeline_slide .swiper-slide .year_con");
+
+if (body.offsetWidth > 1000){
+  qs("#company section.history > .contents_con").style.paddingTop = `calc(${w_logo.offsetHeight}px + 4vh)`;
+  qs(".timeline_slide").style.height = `calc(100vh - ${w_logo.offsetHeight}px - 4vh - 5vw)`;
+} else{
+  qs("#company section.history > .contents_con").style.paddingTop = `calc(${m_logo.offsetHeight}px + 10vh)`;
+  qs(".timeline_slide").style.height = `100%`;
+  qs(".timeline_slide .swiper-slide").style.marginTop = `0`;
+  qs(".timeline_slide .swiper-button-next").style.top = `calc(${m_logo.offsetHeight + year.offsetHeight/2}px + 10vh)`;
+  qs(".timeline_slide .swiper-button-prev").style.top = `calc(${m_logo.offsetHeight + year.offsetHeight/2}px + 10vh)`;
+}
+
+window.addEventListener('resize', function() {
+  if (body.offsetWidth > 1000){
+    qs("#company section.history > .contents_con").style.paddingTop = `calc(${w_logo.offsetHeight}px + 4vh)`;
+    qs(".timeline_slide").style.height = `calc(100vh - ${w_logo.offsetHeight}px - 4vh - 5vw)`;
+  } else{
+    qs("#company section.history > .contents_con").style.paddingTop = `calc(${m_logo.offsetHeight}px + 10vh)`;
+    qs(".timeline_slide").style.height = `100%`;
+    qs(".timeline_slide .swiper-slide").style.marginTop = `0`;
+    qs(".timeline_slide .swiper-button-next").style.top = `calc(${m_logo.offsetHeight + year.offsetHeight/2}px + 10vh)`;
+    qs(".timeline_slide .swiper-button-prev").style.top = `calc(${m_logo.offsetHeight + year.offsetHeight/2}px + 10vh)`;
+  }
+});
+/* history 배치 끝 */
 
 /* poster 슬라이드 시작 */
 $(document).ready(function () {
