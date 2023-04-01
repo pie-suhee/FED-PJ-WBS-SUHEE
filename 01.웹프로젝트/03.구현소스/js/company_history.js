@@ -98,9 +98,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener('resize', function() {
         if (body.offsetWidth > 1200){
-              for(let i=0; i < slides.length; i++) {
-                  slides[i].style.paddingTop = `calc(${w_logo.offsetHeight}px + 4vh + min(5vh, 100px))`;
-              }
+            for(let i=0; i < slides.length; i++) {
+                slides[i].style.paddingTop = `calc(${w_logo.offsetHeight}px + 4vh + min(5vh, 100px))`;
+            }
         } else{
             qs("#company section.history > .contents_con").style.paddingTop = `calc(${m_logo.offsetHeight}px + 10vh)`;
             qs(".timeline_slide").style.height = `100%`;
