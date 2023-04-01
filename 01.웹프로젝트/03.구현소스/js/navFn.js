@@ -26,3 +26,21 @@ function navFn() {
         }
     }
 }
+
+/* nav 시작 */
+
+window.addEventListener("DOMContentLoaded", () => {
+    const m_logo = qs("#top .m_con .logo img");
+
+    /* nav html 동적 생성 시작 */
+
+    /* nav html 동적 생성 끝 */
+    qs("#m_nav > .contents_con .close_btn").style.top = `calc(4vh + ${m_logo.offsetHeight/2}px)`;
+    qs("#top .btn_con").style.top =`calc(4vh + ${m_logo.offsetHeight/2}px)`;
+
+    window.addEventListener('resize', function() {
+      qs("#m_nav > .contents_con .close_btn").style.top = `calc(4vh + ${m_logo.offsetHeight/2}px)`;
+      qs("#top .btn_con").style.top =`calc(4vh + ${m_logo.offsetHeight/2}px)`;
+    });
+});
+/* nav 끝 */

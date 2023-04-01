@@ -207,9 +207,22 @@ body::-webkit-scrollbar {
         width: 100%;
     }
 
+    #company section.introduction > .contents_con .img_con {
+        margin-top: 20vw;
+    }
+
+    #company section.introduction > .contents_con .img_con img {
+        width: 40%;
+    }
+
     #company section.introduction > .contents_con .text_con {
         width: 80%;
-        margin: 7vh auto;
+        margin: 10vw auto;
+    }
+
+    #company section.introduction > .contents_con .kor_text .kor,
+    #company section.introduction > .contents_con .eng_text .eng {
+        font-size: 2vw;
     }
 
     #company section.introduction > .slide_con > .poster_slide {
@@ -217,9 +230,14 @@ body::-webkit-scrollbar {
         position: relative;
     }
 
-    #company section.introduction > .contents_con .kor_text .kor,
-    #company section.introduction > .contents_con .eng_text .eng {
-        font-size: 3.5vw;
+    #company section.introduction > .slide_con > .poster_slide > .swiper-container > .swiper-wrapper > .swiper-slide > .bg_con {
+        aspect-ratio: 1/1.1;
+        height: auto;
+    }
+
+    #company section.introduction > .slide_con > .poster_slide > .swiper-container > .swiper-wrapper > .swiper-slide > .bg_con img {
+        aspect-ratio: 1/1.1;
+        height: auto;
     }
 
     #company section.introduction > .contents_con .sign_con {
@@ -231,7 +249,7 @@ body::-webkit-scrollbar {
     }
     
     #company section.introduction > .contents_con .sign_con ul li {
-        font-size: 3.5vw;
+        font-size: 2vw;
     }
 
     #company section.introduction > .slide_con > .poster_slide > .swiper-pagination span {
@@ -240,12 +258,33 @@ body::-webkit-scrollbar {
 }
 
 @media (max-width: 768px) {
+    #company section.introduction > .contents_con .img_con {
+        margin-top: 16vh;
+    }
+
+    #company section.introduction > .contents_con .img_con img {
+        width: 60%;
+    }
+
+    #company section.introduction > .contents_con .text_con {
+        margin: 7vh auto;
+    }
+    
+    #company section.introduction > .contents_con .kor_text .kor,
+    #company section.introduction > .contents_con .eng_text .eng {
+        font-size: 3.5vw;
+    }
+
     #company section.introduction > .slide_con > .poster_slide > .swiper-container > .swiper-wrapper > .swiper-slide > .bg_con {
-        height: 70vh;
+        aspect-ratio: 1/1.5;
     }
 
     #company section.introduction > .slide_con > .poster_slide > .swiper-container > .swiper-wrapper > .swiper-slide > .bg_con img {
-        height: 70vh;
+        aspect-ratio: 1/1.5;
+    }
+
+    #company section.introduction > .contents_con .sign_con ul li {
+        font-size: 3.5vw;
     }
 }
 
@@ -256,8 +295,8 @@ body::-webkit-scrollbar {
 
 #company section.history > .bg_con {
     width: 100%;
-    height: 100%;
-    position: absolute;
+    height: 100vh;
+    position: fixed;
 }
 
 #company section.history > .bg_con img {
@@ -270,9 +309,9 @@ body::-webkit-scrollbar {
 #company section.history::after {
     content:"";
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: rgba(255,255,255,0.85);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
 }
@@ -291,7 +330,6 @@ body::-webkit-scrollbar {
 }
 
 .timeline_slide .swiper-container {
-    height: 600px;
     width: 100%;
     height: 100%;
     position: relative;
@@ -457,10 +495,18 @@ body::-webkit-scrollbar {
     filter:brightness(0);
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
+    #company section.history .contents_con {
+        height: 100vh;
+    }
+
     #company section.history::after {
         height: 100vh;
         background: linear-gradient(270deg, rgba(0, 0, 0, 0.7) 10%, rgba(255, 251, 244, 0.8) 50%, #fffbf4 90%);
+    }
+
+    .timeline_slide .swiper-container {
+        height: 100vh;
     }
 
     .timeline_slide .swiper-slide::after {
@@ -468,10 +514,6 @@ body::-webkit-scrollbar {
         bottom: -8%;
         width: 240px;
         height: 50%;
-    }
-
-    .timeline_slide {
-        margin-top: 5vw;
     }
 
     .timeline_slide .swiper-slide-content {
@@ -486,6 +528,7 @@ body::-webkit-scrollbar {
 
     .timeline_slide .swiper-slide{
         padding-left: 5vw;
+        padding-bottom: 0;
     }
 
     .timeline_slide .swiper-slide .year_con {
@@ -494,8 +537,8 @@ body::-webkit-scrollbar {
 
     .timeline_slide .swiper-slide .timeline-year {
         margin-top: 0;
-        margin-bottom: 5vh;
-        font-size: min(3.8vw,48px);
+        margin-bottom: 2vh;
+        font-size: min(3vw,48px);
     }
 
     .timeline_slide .swiper-slide .list_con {
@@ -507,7 +550,7 @@ body::-webkit-scrollbar {
     }
 
     .timeline_slide .swiper-slide .list_con ul li span {
-        font-size: min(3.5vw,16px);
+        font-size: min(2vw,18px);
         word-break: keep-all;
     }
 
