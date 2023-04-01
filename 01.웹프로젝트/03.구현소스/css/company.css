@@ -193,7 +193,7 @@ body::-webkit-scrollbar {
     font-weight: bold;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
     #company section.introduction {
         display: block;
     }
@@ -272,7 +272,7 @@ body::-webkit-scrollbar {
     content:"";
     width: 100%;
     height: 100vh;
-    background: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.85);
     position: absolute;
     top: 0;
     left: 0;
@@ -304,7 +304,7 @@ body::-webkit-scrollbar {
 }
 
 .timeline_slide .swiper-slide {
-    padding: 20vh 5vw;
+    padding: 13.7vh 5vw;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -338,16 +338,44 @@ body::-webkit-scrollbar {
     z-index: 2;
 }
 
+.timeline_slide .swiper-slide .year_con {
+    text-align: center;
+}
+
 .timeline_slide .swiper-slide .timeline-year {
     display: block;
-    font-style: italic;
-    font-size: 42px;
-    margin-bottom: 50px;
-    -webkit-transform: translate3d(20px, 0, 0);
-            transform: translate3d(20px, 0, 0);
-    color: #ffffff;
+    margin-top : 1vw;
+    margin-bottom: 10vw;
+    font-size: min(8vw,42px);
+    color: #000000;
     font-weight: 300;
     transition: .2s ease .4s;
+}
+
+.timeline_slide .swiper-slide .list_con ul {
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+
+.timeline_slide .swiper-slide .list_con ul li {
+    display: flex;
+    align-items: top;
+    margin-top: 1.5vh;
+}
+
+.timeline_slide .swiper-slide .list_con ul li .dot {
+    display: block;
+    margin-top: -4px;
+    padding-right: 10px;
+}
+
+.timeline_slide .swiper-slide .list_con ul li span {
+    font-size: min(3.5vw,24px);
+    word-break: keep-all;
+}
+
+.timeline_slide .swiper-slide .list_con ul li:nth-child(1) {
+    margin-top: 0;
 }
 
 .timeline_slide .swiper-pagination {
@@ -359,7 +387,7 @@ body::-webkit-scrollbar {
     justify-content: center;
     font-style: italic;
     font-weight: 300;
-    font-size: 18px;
+    font-size: min(2vw,24px);
     z-index: 1;
 }
 
@@ -421,6 +449,7 @@ body::-webkit-scrollbar {
 .timeline_slide .swiper-button-prev {
     left: 8%;
     background-image: url("../img/arrow_left_w.svg");
+    filter:brightness(0);
 }
 
 .timeline_slide .swiper-button-prev:hover {
@@ -431,6 +460,7 @@ body::-webkit-scrollbar {
 .timeline_slide .swiper-button-next {
     right: 8%;
     background-image: url("../img/arrow_right_w.svg");
+    filter:brightness(0);
 }
 
 .timeline_slide .swiper-button-next:hover {
@@ -460,9 +490,28 @@ body::-webkit-scrollbar {
         text-align: right;
     }
 
+    .timeline_slide .swiper-slide .slide_div {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .timeline_slide .swiper-slide .year_con {
+        text-align: left;
+    }
+
     .timeline_slide .swiper-slide .timeline-year {
-        margin-bottom: 0;
-        font-size: 32px;
+        margin-top: 0;
+        margin-bottom: 5vh;
+        font-size: min(3.8vw,48px);
+    }
+
+    .timeline_slide .swiper-slide .list_con {
+        width: 70vw;
+    }
+
+    .timeline_slide .swiper-slide .list_con ul {
+        padding: 0;
     }
 
     .timeline_slide .swiper-pagination {
@@ -475,11 +524,12 @@ body::-webkit-scrollbar {
         right: 15%;
         -webkit-transform: rotate(90deg) translate(0, 10px);
                 transform: rotate(90deg) translate(0, 10px);
+        filter: brightness(1);
     }
 
     .timeline_slide .swiper-button-prev:hover {
-      -webkit-transform: rotate(90deg) translate(-3px, 10px);
-              transform: rotate(90deg) translate(-3px, 10px);
+        -webkit-transform: rotate(90deg) translate(-3px, 10px);
+                transform: rotate(90deg) translate(-3px, 10px);
     }
 
     .timeline_slide .swiper-button-next {
@@ -488,6 +538,7 @@ body::-webkit-scrollbar {
         right: 15%;
         -webkit-transform: rotate(90deg) translate(0, 10px);
                 transform: rotate(90deg) translate(0, 10px);
+        filter: brightness(1);
     }
 
     .timeline_slide .swiper-button-next:hover {
@@ -496,7 +547,7 @@ body::-webkit-scrollbar {
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
     .timeline_slide .swiper-slide::after {
         right: -20%;
         bottom: -12%;
@@ -631,7 +682,7 @@ body::-webkit-scrollbar {
     #company section.contactus > .contents_con > .info_con > ul > li > .text_con span {
         display: inline-block;
         margin-top: 1vh;
-        font-size: 0.8vw;
+        font-size: 2.8vw;
     }
 
     #company section.contactus > .contents_con > .info_con > ul > li:nth-child(1) {
