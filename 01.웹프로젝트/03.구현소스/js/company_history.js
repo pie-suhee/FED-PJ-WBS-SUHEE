@@ -76,6 +76,8 @@ let timelineSwiper = new Swiper ('.timelineSwiper', {
   });
 /* timeline 슬라이드 끝 */
 
+window.addEventListener("resize",()=>location.reload());
+
 /* history 배치 시작 */
 window.addEventListener("DOMContentLoaded", () => {
     const body = qs("body");
