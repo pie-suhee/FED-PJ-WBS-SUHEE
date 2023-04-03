@@ -80,17 +80,6 @@ for (let i in artist) {
 newSection.appendChild(newContentsCon);
 
 qs(".main_con").appendChild(newSection);
-
-let newScrollDown = create("div");
-newScrollDown.classList.add("scroll_down");
-newScrollDown.textContent = "Scroll down";
-
-let newArrow = create("div");
-newArrow.classList.add("arrow");
-
-newScrollDown.appendChild(newArrow);
-
-qs(".main_con").appendChild(newScrollDown);
 /* slide html 동적 생성 끝 */
 
 /* img_con 배치 & scroll 이벤트 시작 */
@@ -109,7 +98,8 @@ function setup() {
     });
 }
 
-function updateCards(mob=0) { // 전달값 없으면 0할당후 전달
+function updateCards(mob) {
+    // 전달값 없으면 0할당후 전달
     if (protUp) return;
 
     protUp = 1;
@@ -119,10 +109,9 @@ function updateCards(mob=0) { // 전달값 없으면 0할당후 전달
     }, 300);
 
     let dir = event.wheelDelta;
-    console.log(dir);
 
     // 모바일일때 mob에 전달값 있음!
-    if(mob!==0) dir = mob;
+    if (mob !== 1) dir = mob;
 
     if (dir < 0) deg = deg - angle;
     else deg = deg + angle;
@@ -135,9 +124,8 @@ function updateCards(mob=0) { // 전달값 없으면 0할당후 전달
 
 setup();
 window.addEventListener("resize", setup);
-window.addEventListener("wheel", updateCards);
+window.addEventListener("wheel", () => updateCards(1));
 /* img_con 배치 & scroll 이벤트 끝 */
-
 
 /* 모바일 drag 이벤트 시작 */
 // 변수만들기
@@ -146,8 +134,7 @@ let drag = false;
 // (2) 첫번째 위치포인트 first x, first y
 let fx;
 // (3) 마지막 위치포인트 last x, last y
-let lx=0; // 마지막위치는 처음에 0할당!
-console.log("lx:", lx);
+let lx = 0; // 마지막위치는 처음에 0할당!
 // (4) 움직일때 위치포인트 move x, move y
 let mvx, mvy;
 // (5) 위치이동 차이 결과변수 result x, result y
@@ -161,38 +148,42 @@ const dFalse = () => (drag = false);
 
 // (3) 드래그 움질일때 작동함수
 const dMove = () => {
-    console.log("드래그상태:", drag);
     // 드래그 상태일때만 실행
     if (drag) {
-        console.log("드래그중~");
-
         // 1. 드래그 상태에서 움직일때 위치값 : mvx,mvy
         mvx = event.pageX || event.changedTouches[0].pageX;
         // 모바일일때는 뒤엣것이 유효하므로 할당되어 사용된다!
-    
+
         // 2. 움직일때 위치값 - 처음 위치값 : rx, ry
         // x축값은 left값, y축값은 top값 이동이다!
         rx = mvx - fx;
-        
-        console.log(rx);
-
     } /////////// if : 드래그일때 ///////
 }; ///////// dMove //////////////
 
 // (4) 첫번째 위치포인트 셋팅함수
 const firstPoint = () => {
-        
-  fx = event.pageX || event.changedTouches[0].pageX;
-  // 변수 = 할당값1 || 할당값2;
-  // -> undefined / null 값이 아닌값으로 할당된다!
-  // -> 우선순위로 DT쪽을 먼저써준다!
-  // fy = event.pageY;
+    fx = event.pageX || event.changedTouches[0].pageX;
+    // 변수 = 할당값1 || 할당값2;
+    // -> undefined / null 값이 아닌값으로 할당된다!
+    // -> 우선순위로 DT쪽을 먼저써준다!
+    // fy = event.pageY;
 };
 
 // (1) 마우스 이벤트 : touchstart
-window.addEventListener("touchstart", () => {dTrue();firstPoint();});
+window.addEventListener("touchstart", () => {
+    dTrue();
+    firstPoint();
+});
 // (2) 마우스 이벤트 : touchmove
 window.addEventListener("touchmove", dMove);
 // (3) 마우스 이벤트 : touchend
-window.addEventListener("touchend", () => {dFalse();updateCards(rx)});
+window.addEventListener("touchend", () => {
+    dFalse();
+    updateCards(rx);
+});
 /* 모바일 drag 이벤트 끝 */
+
+document.querySelectorAll("a").addEventListener("click",()=>{event.preventDefault();event.stopPropagation()})
+document.querySelectorAll("a").addEventListener("touchstart",()=>event.stopPropagation())
+document.querySelectorAll("a").addEventListener("touchmove",()=>event.stopPropagation())
+document.querySelectorAll("a").addEventListener("touchend",()=>event.stopPropagation())

@@ -3,6 +3,18 @@
 @import url(reset.css);
 @import url(fonts.css);
 
+.w_con {display: block;}
+.m_con {display: none;}
+
+.w_img {display: inline; width:100%;}
+.m_img {display: none;}
+
+.w_br {display: block;}
+.m_br {display: none;}
+
+.w_bar {display: inline-block;}
+.m_bar {display: none;}
+
 body {
     width: 100%;
 	background: url(../img/tree_bg.png) no-repeat fixed center/cover;
@@ -173,8 +185,48 @@ body::-webkit-scrollbar {
 }
 
 @media(max-width:768px){
+	.w_con {display:none;}
+	.m_con {display:block;}
+
+	.w_img {display:none;}
+	.m_img {display:inline-block; width:100%;}
+
+	.w_br {display:none;}
+	.m_br {display:inline;}
+
+	.w_bar {display:none;}
+	.m_bar {display:inline;}
+
 	.slide_con > .contents_con {
 		width: 300vw;
+	}
+
+	.drag {
+		display: flex;
+		align-items: center;
+		position: fixed;
+		bottom: 20px;
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
+
+	.drag span {
+		padding-top: 4px;
+		font-size: min(4vw,24px);
+		color: #ffffff;
+		font-weight: 400;
+		text-transform: uppercase;
+		overflow: visible;
+	}
+	
+	.drag .arrow {
+		width: 15px;
+		height: 15px;
+		margin-left: 5px;
+		position: relative;
+		top: 0px;
+		background-image: url(../img/arrow_right_w.svg);
+		background-size: 15px 15px;
 	}
 }
 
