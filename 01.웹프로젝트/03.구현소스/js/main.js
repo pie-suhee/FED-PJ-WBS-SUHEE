@@ -89,6 +89,7 @@ const total = cards.length;
 let protUp = 0;
 let angle = 360 / total;
 let deg = 0;
+let prevMob;
 
 function setup() {
     wheel.style.bottom = `calc(-${wheel.offsetWidth}px + 10vh)`;
@@ -111,7 +112,14 @@ function updateCards(mob) {
     let dir = event.wheelDelta;
 
     // 모바일일때 mob에 전달값 있음!
-    if (mob !== 1) dir = mob;
+    if (mob !== 1) {
+      if (mob === prevMob) return;
+
+      // 이전 호출의 값을 저장하여 기억함
+      prevMob = mob;
+
+      dir = mob;
+    }
 
     if (dir < 0) deg = deg - angle;
     else deg = deg + angle;
@@ -174,16 +182,13 @@ window.addEventListener("touchstart", () => {
     dTrue();
     firstPoint();
 });
+
 // (2) 마우스 이벤트 : touchmove
 window.addEventListener("touchmove", dMove);
+
 // (3) 마우스 이벤트 : touchend
 window.addEventListener("touchend", () => {
     dFalse();
     updateCards(rx);
 });
 /* 모바일 drag 이벤트 끝 */
-
-document.querySelectorAll("a").addEventListener("click",()=>{event.preventDefault();event.stopPropagation()})
-document.querySelectorAll("a").addEventListener("touchstart",()=>event.stopPropagation())
-document.querySelectorAll("a").addEventListener("touchmove",()=>event.stopPropagation())
-document.querySelectorAll("a").addEventListener("touchend",()=>event.stopPropagation())
