@@ -280,6 +280,7 @@ body::-webkit-scrollbar {
     }
 
     #company section.introduction > .slide_con > .poster_slide > .swiper-container > .swiper-wrapper > .swiper-slide > .bg_con img {
+        display: block;
         aspect-ratio: 1/1.5;
     }
 
