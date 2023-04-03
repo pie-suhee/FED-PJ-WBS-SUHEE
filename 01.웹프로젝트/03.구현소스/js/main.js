@@ -138,7 +138,9 @@ window.addEventListener("resize", setup);
 window.addEventListener("wheel", updateCards);
 /* img_con 배치 & scroll 이벤트 끝 */
 
-// 변수만들기 /////////////
+
+/* 모바일 drag 이벤트 시작 */
+// 변수만들기
 // (1) 드래그 상태변수 : true-드래그중, false-드래그아님
 let drag = false;
 // (2) 첫번째 위치포인트 first x, first y
@@ -159,22 +161,15 @@ const dFalse = () => (drag = false);
 
 // (3) 드래그 움질일때 작동함수
 const dMove = () => {
-    console.log("드래그상태:", drag);
     // 드래그 상태일때만 실행
     if (drag) {
-        console.log("드래그중~");
-
         // 1. 드래그 상태에서 움직일때 위치값 : mvx,mvy
         mvx = event.pageX || event.changedTouches[0].pageX;
         // 모바일일때는 뒤엣것이 유효하므로 할당되어 사용된다!
-        
-        
+    
         // 2. 움직일때 위치값 - 처음 위치값 : rx, ry
         // x축값은 left값, y축값은 top값 이동이다!
         rx = mvx - fx;
-        
-        console.log(rx);
-
     } /////////// if : 드래그일때 ///////
 }; ///////// dMove //////////////
 
@@ -194,3 +189,4 @@ window.addEventListener("touchstart", () => {dTrue();firstPoint();});
 window.addEventListener("touchmove", dMove);
 // (3) 마우스 이벤트 : touchend
 window.addEventListener("touchend", () => {dFalse();updateCards(rx)});
+/* 모바일 drag 이벤트 끝 */
