@@ -446,7 +446,7 @@ body::-webkit-scrollbar {
     opacity: 1;
     background: transparent;
     color: #ffffff;
-    margin: 15px 0 !important;
+    margin: 10px 0 !important;
     position: relative;
 }
 
