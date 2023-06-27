@@ -1,17 +1,17 @@
 const express = require('express')
 const app = express()
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const config = require('./config/key');
-const { auth } = require('./middleware/auth');
-const { User } = require("./models/User");
+const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
+const config = require('./config/key')
+const { auth } = require('./middleware/auth')
+const { User } = require("./models/User")
 
 //application/x-www-form-urlencoded 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }))
 
 //application/json 
-app.use(bodyParser.json());
-app.use(cookieParser());
+app.use(bodyParser.json())
+app.use(cookieParser())
 
 const mongoose = require('mongoose')
 mongoose.connect(config.mongoURI, {
@@ -40,11 +40,9 @@ app.post('/api/users/register', (req, res) => {
 
 app.post('/api/users/login', (req, res) => {
 
-  // console.log('ping')
   //요청된 이메일을 데이터베이스에서 있는지 찾는다.
   User.findOne({ email: req.body.email }, (err, user) => {
 
-    // console.log('user', user)
     if (!user) {
       return res.json({
         loginSuccess: false,
@@ -54,9 +52,6 @@ app.post('/api/users/login', (req, res) => {
 
     //요청된 이메일이 데이터 베이스에 있다면 비밀번호가 맞는 비밀번호 인지 확인.
     user.comparePassword(req.body.password, (err, isMatch) => {
-      // console.log('err',err)
-
-      // console.log('isMatch',isMatch)
 
       if (!isMatch)
         return res.json({ loginSuccess: false, message: "비밀번호가 틀렸습니다." })
@@ -92,7 +87,6 @@ app.get('/api/users/auth', auth, (req, res) => {
 })
 
 app.get('/api/users/logout', auth, (req, res) => {
-  // console.log('req.user', req.user)
   User.findOneAndUpdate({ _id: req.user._id },
     { token: "" }
     , (err, user) => {
