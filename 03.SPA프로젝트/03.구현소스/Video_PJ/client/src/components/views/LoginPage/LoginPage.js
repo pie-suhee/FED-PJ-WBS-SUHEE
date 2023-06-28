@@ -3,8 +3,13 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { loginUser } from '../../../_actions/user_action'
 
+import { UserOutlined, LockOutlined } from '@ant-design/icons'
+import { Button, Input, Typography } from 'antd'
+
 import '../../../css/layout.css'
 import '../../../css/login.css'
+
+const { Title } = Typography
 
 function LoginPage() {
     const navigate = useNavigate()
@@ -41,15 +46,28 @@ function LoginPage() {
 
     return (
         <div className='layout'>
+            <Title level={2}>Log In</Title>
+
             <form className='form' onSubmit={onSubmitHandler}>
-                <label>Email</label>
-                <input type="email" value={Email} onChange={onEmailHandler} />
-                <label>Password</label>
-                <input type="password" value={Password} onChange={onPasswordHandler} />
-                <br />
-                <button type="submit">
-                    Login
-                </button>
+                <Input
+                    className='input'
+                    prefix={<UserOutlined />}
+                    placeholder="Enter your email"
+                    type="email"
+                    value={Email}
+                    onChange={onEmailHandler}
+                />
+                <Input
+                    className='input'
+                    prefix={<LockOutlined />}
+                    placeholder="Enter your password"
+                    type="password" 
+                    value={Password} 
+                    onChange={onPasswordHandler}
+                />
+                <Button type="primary" htmlType="submit">
+                    Log in
+                </Button>
             </form>
         </div>
     )
