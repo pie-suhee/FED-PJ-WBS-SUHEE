@@ -1,15 +1,59 @@
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.input > input {
+    font-size: 1rem;
+    line-height: 1rem;
+    font-weight: 600;
+}
+
+button {
+    width: 100%;
+}
+
+button > span {
+    font-size: 1rem;
+    line-height: 1rem;
+    font-weight: 600;
+}
+
 .layout {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    min-height: calc(100vh - 146px);
+    min-height: calc(100vh - 153px);
 }
 
-.form {
+.UserLayout {
+    justify-content: center;
+    align-items: center;
+}
+
+.UploadLayout {
+    width: 60%;
+    min-width: 300px;
+    margin: 0 auto;
+    padding: 10px 0 50px;
+    box-sizing: border-box;
+}
+
+.form > ul {
     display: flex;
     flex-direction: column;
+    gap: 30px;
+    min-width: 300px;
+    margin-top: 20px;
+}
+
+.form > ul > li > label {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    line-height: 1rem;
+    font-weight: 600;
 }
 
 /* 푸터 */
@@ -19,6 +63,6 @@
     align-items: center;
     justify-content: center;
     height: 80px;
-    background-color: #fafafa;
+    background-color: #f3f3f3;
     font-size: 1rem;
 }

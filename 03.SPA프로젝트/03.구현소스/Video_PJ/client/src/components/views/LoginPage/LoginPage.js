@@ -45,29 +45,37 @@ function LoginPage() {
     }
 
     return (
-        <div className='layout'>
+        <div className='layout UserLayout'>
             <Title level={2}>Log In</Title>
 
             <form className='form' onSubmit={onSubmitHandler}>
-                <Input
-                    className='input'
-                    prefix={<UserOutlined />}
-                    placeholder="Enter your email"
-                    type="email"
-                    value={Email}
-                    onChange={onEmailHandler}
-                />
-                <Input
-                    className='input'
-                    prefix={<LockOutlined />}
-                    placeholder="Enter your password"
-                    type="password" 
-                    value={Password} 
-                    onChange={onPasswordHandler}
-                />
-                <Button type="primary" htmlType="submit">
-                    Log in
-                </Button>
+                <ul>
+                    <li>
+                        <Input
+                            className='input'
+                            prefix={<UserOutlined />}
+                            placeholder="Enter your email"
+                            type="email"
+                            value={Email}
+                            onChange={onEmailHandler}
+                        />
+                    </li>
+                    <li>
+                        <Input
+                            className='input'
+                            prefix={<LockOutlined />}
+                            placeholder="Enter your password"
+                            type="password"
+                            value={Password}
+                            onChange={onPasswordHandler}
+                        />
+                    </li>
+                    <li>
+                        <Button type="primary" size="large" htmlType="submit">
+                            Log in
+                        </Button>
+                    </li>
+                </ul>
             </form>
         </div>
     )

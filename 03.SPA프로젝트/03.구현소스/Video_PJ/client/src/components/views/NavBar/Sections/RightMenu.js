@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { useState } from 'react';
 import { Menu } from 'antd';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -8,6 +8,8 @@ import { useSelector } from "react-redux";
 function RightMenu(props) {
   const navigate = useNavigate()
   const user = useSelector(state => state.user)
+  const [Beforecurrent, setBeforeCurrent] = useState('')
+  const [Aftercurrent, setAfterCurrent] = useState('')
 
   const onClickHandler = () => {
     axios.get(`/api/users/logout`)
@@ -20,27 +22,53 @@ function RightMenu(props) {
         })
   }
 
+  const Beforeitems = [
+    {
+      label: (
+        <a href="/login">Log in</a>
+      ),
+      key: 'mail',
+    },
+    {
+      label: (
+        <a href="/register">Sign up</a>
+      ),
+      key: 'app',
+    },
+  ]
+  
+  const Afteritems = [
+    {
+      label: (
+        <a href="/video/upload">Upload</a>
+      ),
+      key: 'create',
+    },
+    {
+      label: (
+        <a onClick={onClickHandler}>Logout</a>
+      ),
+      key: 'logout',
+    },
+  ]
+
+  const onBeforeClick = (e) => {
+    console.log('click ', e);
+    setBeforeCurrent(e.key);
+  };
+
+  const onAfterClick = (e) => {
+    console.log('click ', e);
+    setAfterCurrent(e.key);
+  };
+
   if (user.userData && !user.userData.isAuth) {
     return (
-      <Menu mode={props.mode}>
-        <Menu.Item key="mail">
-          <a href="/login">Sign in</a>
-        </Menu.Item>
-        <Menu.Item key="app">
-          <a href="/register">Sign up</a>
-        </Menu.Item>
-      </Menu>
+      <Menu onClick={onBeforeClick} selectedKeys={[Beforecurrent]} mode="horizontal" items={Beforeitems} />
     )
   } else {
     return (
-      <Menu mode={props.mode}>
-        <Menu.Item key="create">
-          <a href="/video/upload">Upload</a>
-        </Menu.Item>
-        <Menu.Item key="logout">
-          <a onClick={onClickHandler}>Logout</a>
-        </Menu.Item>
-      </Menu>
+      <Menu onClick={onAfterClick} selectedKeys={[Aftercurrent]} mode="horizontal" items={Afteritems} />
     )
   }
 }

@@ -1,5 +1,6 @@
 .menu {
   display: flex;
+  gap: 1%;
   width: 100%;
   padding: 0 20px;
   border-bottom: solid 1px #e8e8e8;
@@ -13,13 +14,14 @@
 }
 
 .menu__logo {
-  width: 150px;
+  width: 140px;
+  margin: 20px 0;
 }
 
 .menu__logo a {
-  display: inline-block;
-  font-size: 20px;
-  padding: 19px 20px;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .menu__container {
@@ -46,6 +48,8 @@
 .menu__container .ant-menu-item a,
 .menu__container .ant-menu-submenu-title a {
   padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .menu__container .ant-menu-horizontal {
@@ -53,13 +57,19 @@
 }
 
 .menu__mobile-button {
+  width: 32px;
   height: 32px;
   padding: 6px;
-  margin-top: 8px;
   display: none !important; /* use of important to overwrite ant-btn */
   background-color: transparent;
   outline: none;
   border: none;
+}
+
+.menu_left,
+.menu_right {
+  display: block;
+  width: 200px;
 }
 
 .menu_drawer .ant-drawer-body {
@@ -72,6 +82,10 @@
 }
 
 @media (max-width: 767px) {
+  .menu {
+    padding: 10px 20px;
+  }
+
   .menu__container {
     justify-content: flex-end;
   }
@@ -81,20 +95,17 @@
   }
 
   .menu_left,
-  .menu_rigth {
+  .menu_right {
     display: none;
   }
 
-  .menu__logo a {
-    margin-left: -20px;
+  .menu__logo {
+    width: 100px;
+    margin: 0;
   }
 
   .menu__container .ant-menu-item,
   .menu__container .ant-menu-submenu-title {
     padding: 1px 20px;
-  }
-
-  .menu__logo a {
-    padding: 10px 20px;
   }
 }

@@ -3,7 +3,11 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { registerUser } from '../../../_actions/user_action'
 
+import { Button, Input, Typography } from 'antd'
+
 import '../../../css/layout.css'
+
+const { Title } = Typography
 
 function RegisterPage() {
     const navigate = useNavigate()
@@ -57,24 +61,53 @@ function RegisterPage() {
 
 
     return (
-        <div className='layout'>
+        <div className='layout UserLayout'>
+            <Title level={2}>Sign Up</Title>
             <form className='form' onSubmit={onSubmitHandler}>
-                <label>Email</label>
-                <input type="email" value={Email} onChange={onEmailHandler} />
-
-                <label>Name</label>
-                <input type="text" value={Name} onChange={onNameHandler} />
-
-                <label>Password</label>
-                <input type="password" value={Password} onChange={onPasswordHandler} />
-
-                <label>Confirm Password</label>
-                <input type="password" value={ConfirmPassword} onChange={onConfirmPasswordHandler} />
-
-                <br />
-                <button type="submit">
-                    회원 가입
-                </button>
+                <ul>
+                    <li>
+                        <label>Name</label>
+                        <Input
+                            placeholder="Enter your name"
+                            type="text"
+                            value={Name}
+                            onChange={onNameHandler}
+                        />
+                    </li>
+                    
+                    <li>
+                        <label>Email</label>
+                        <Input
+                            placeholder="Enter your email"
+                            type="email"
+                            value={Email}
+                            onChange={onEmailHandler}
+                        />
+                    </li>
+                    <li>
+                        <label>Password</label>
+                        <Input
+                            placeholder="Enter your password"
+                            type="password"
+                            value={Password}
+                            onChange={onPasswordHandler}
+                        />
+                    </li>
+                    <li>
+                        <label>Confirm</label>
+                        <Input
+                            placeholder="Enter your confirmPassword"
+                            type="password"
+                            value={ConfirmPassword}
+                            onChange={onConfirmPasswordHandler}
+                        />
+                    </li>
+                    <li>
+                        <Button type="primary" size="large" htmlType="submit">
+                            Sign up
+                        </Button>
+                    </li>
+                </ul>
             </form>
         </div>
     )
