@@ -1,23 +1,24 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react';
-import { Menu } from 'antd';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import { useSelector } from "react-redux";
+import React, { useState } from 'react'
+import { Menu } from 'antd'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import { useSelector } from "react-redux"
 
 function RightMenu(props) {
   const navigate = useNavigate()
+
   const user = useSelector(state => state.user)
-  const [Beforecurrent, setBeforeCurrent] = useState('')
-  const [Aftercurrent, setAfterCurrent] = useState('')
+
+  const [current, setCurrent] = useState('')
 
   const onClickHandler = () => {
     axios.get(`/api/users/logout`)
         .then(response => {
             if (response.data.success) {
-                navigate('/login')
+              navigate('/login')
             } else {
-                alert('로그아웃 하는데 실패 했습니다.')
+              alert('로그아웃 하는데 실패 했습니다.')
             }
         })
   }
@@ -52,23 +53,18 @@ function RightMenu(props) {
     },
   ]
 
-  const onBeforeClick = (e) => {
+  const onClick = (e) => {
     console.log('click ', e);
-    setBeforeCurrent(e.key);
-  };
-
-  const onAfterClick = (e) => {
-    console.log('click ', e);
-    setAfterCurrent(e.key);
+    setCurrent(e.key);
   };
 
   if (user.userData && !user.userData.isAuth) {
     return (
-      <Menu onClick={onBeforeClick} selectedKeys={[Beforecurrent]} mode="horizontal" items={Beforeitems} />
+      <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={Beforeitems} />
     )
   } else {
     return (
-      <Menu onClick={onAfterClick} selectedKeys={[Aftercurrent]} mode="horizontal" items={Afteritems} />
+      <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={Afteritems} />
     )
   }
 }

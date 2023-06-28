@@ -4,7 +4,7 @@ const multer = require('multer');
 let ffmpeg = require('fluent-ffmpeg');
 
 const { Video } = require("../models/Video");
-const { Subscriber } = require("../models/Subscriber");
+/* const { Subscriber } = require("../models/Subscriber"); */
 /* const { auth } = require("../middleware/auth"); */
 
 let storage = multer.diskStorage({
@@ -48,10 +48,8 @@ router.post("/thumbnail", (req, res) => {
     let thumbsFilePath ="";
     let fileDuration ="";
 
-    ffmpeg.setFfmpegPath("C:\\Program Files\\ffmpeg\\bin\\ffmpeg.exe");
-
     // 비디오 정보 가져오기
-    ffmpeg.ffprobe(req.body.url, function(err, metadata){
+    ffmpeg.ffprobe(req.body.filePath, function(err, metadata){
         console.dir(metadata);
         console.log(metadata.format.duration);
 

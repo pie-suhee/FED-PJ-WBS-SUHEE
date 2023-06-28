@@ -23,7 +23,7 @@ function App() {
             <Route exact path="/" element={<AuthLandingPage />} />
             <Route exact path="/login" element={<AuthLoginPage />} />
             <Route exact path="/register" element={<AuthRegisterPage />} />
-            <Route exact path="/video/upload" element={<AuthVideoUploadPage />} />
+            {<Route exact path="/video/upload" element={<AuthVideoUploadPage />} />}
           </Routes>
         <Footer />
       </Router>
