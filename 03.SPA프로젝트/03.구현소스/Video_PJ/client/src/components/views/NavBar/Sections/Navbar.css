@@ -29,12 +29,13 @@
 }
 
 .menu__container .ant-menu {
-  display: flex;
-  align-items: center;
   height: 100%;
 }
 
 .menu__container .ant-menu-item {
+  display: flex;
+  align-items: center;
+  height: 100%;
   padding: 0px 5px;
 }
 
