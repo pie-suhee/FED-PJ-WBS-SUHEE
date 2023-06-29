@@ -5,7 +5,7 @@ import axios from 'axios'
 import moment from 'moment'
 
 import '../../../css/layout.css'
-import '../../../css/landing.css'
+import '../../../css/videolist.css'
 
 const { Title } = Typography
 const { Meta } = Card
@@ -27,8 +27,11 @@ function LandingPage() {
 
     const renderCards = Videos.map((video, index) => {
 
-        var minutes = Math.floor(video.duration / 60);
-        var seconds = Math.floor(video.duration - minutes * 60);
+        let minutes = Math.floor(video.duration / 60);
+        let seconds = Math.floor(video.duration - minutes * 60);
+
+        minutes = minutes<10?"0"+minutes:minutes;
+        seconds = seconds<10?"0"+seconds:seconds;
 
         return <Col lg={6} md={8} xs={24}>
             <div style={{ position: 'relative' }}>
@@ -38,24 +41,27 @@ function LandingPage() {
                         <span>{minutes} : {seconds}</span>
                     </div>
                 </a>
-            </div><br />
-            <Meta
-                avatar={
-                    <Avatar src={video.thumbnail} />
-                }
-                title={video.title}
-            />
-            <span>{video.writer.name} </span><br />
-            <span style={{ marginLeft: '3rem' }}> {video.views}</span>
-            - <span> {moment(video.createdAt).format("MMM Do YY")} </span>
+            </div>
+            <br />
+            <div className='videoInfo'>
+                <Meta
+                    avatar={
+                        <Avatar src={video.thumbnail} />
+                    }
+                />
+                <div className='videoText'>
+                    <span>{video.title}</span>
+                    <span>{video.writer.name} </span>
+                    <span>{moment(video.createdAt).format("MMM Do YY")}</span>
+                </div>
+            </div>
         </Col>
 
     })
 
     return (
         <div className='layout HomeLayout'>
-            <Title level={2}> Recommended </Title>
-            <hr />
+            <Title level={2} > Recommended </Title>
 
             <Row gutter={16}>
                 {renderCards}

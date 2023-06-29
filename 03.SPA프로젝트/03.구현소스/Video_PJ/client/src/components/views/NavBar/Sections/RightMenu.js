@@ -10,16 +10,6 @@ function RightMenu(props) {
   const user = useSelector(state => state.user)
   const [Beforecurrent, setBeforeCurrent] = useState('')
   const [Aftercurrent, setAfterCurrent] = useState('')
-  
-  const onBeforeClick = (e) => {
-    console.log('click ', e);
-    setBeforeCurrent(e.key);
-  };
-
-  const onAfterClick = (e) => {
-    console.log('click ', e);
-    setAfterCurrent(e.key);
-  };
 
   const onClickHandler = () => {
     axios.get(`/api/users/logout`)
@@ -61,6 +51,16 @@ function RightMenu(props) {
       key: 'logout',
     },
   ]
+
+  const onBeforeClick = (e) => {
+    console.log('click ', e);
+    setBeforeCurrent(e.key);
+  };
+
+  const onAfterClick = (e) => {
+    console.log('click ', e);
+    setAfterCurrent(e.key);
+  };
 
 
   if (user.userData && !user.userData.isAuth) {

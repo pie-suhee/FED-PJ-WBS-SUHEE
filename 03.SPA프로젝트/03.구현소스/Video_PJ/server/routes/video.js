@@ -4,7 +4,7 @@ const multer = require('multer');
 let ffmpeg = require('fluent-ffmpeg');
 
 const { Video } = require("../models/Video");
-/* const { Subscriber } = require("../models/Subscriber"); */
+const { Subscriber } = require("../models/Subscriber");
 /* const { auth } = require("../middleware/auth"); */
 
 let storage = multer.diskStorage({
@@ -67,7 +67,7 @@ router.post("/thumbnail", (req, res) => {
             // Will take screens at 20%, 40%, 60% and 80% of the video
             count: 3,
             folder: 'uploads/thumbnails',
-            size:'340x240',
+            size:'340x191',
             // %b input basename ( filename w/o extension )
             filename:'thumbnail-%b.png'
         });
@@ -96,7 +96,7 @@ router.post("/uploadVideo", (req, res) => {
     })
 });
 
-/* router.post("/getVideo", (req, res) => {
+router.post("/getVideo", (req, res) => {
 
     Video.findOne({ "_id" : req.body.videoId })
     .populate('writer')
@@ -104,9 +104,9 @@ router.post("/uploadVideo", (req, res) => {
         if(err) return res.status(400).send(err);
         res.status(200).json({ success: true, video })
     })
-}); */
+});
 
-/* router.post("/getSubscriptionVideos", (req, res) => {
+router.post("/getSubscriptionVideos", (req, res) => {
     //Need to find all of the Users that I am subscribing to From Subscriber Collection    
     Subscriber.find({ 'userFrom': req.body.userFrom })
     .exec((err, subscribers)=> {
@@ -127,6 +127,6 @@ router.post("/uploadVideo", (req, res) => {
                 res.status(200).json({ success: true, videos })
             })
     })
-}); */
+});
 
 module.exports = router

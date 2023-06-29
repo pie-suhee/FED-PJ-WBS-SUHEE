@@ -24,7 +24,7 @@ button > span {
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: calc(100vh - 153px);
+    min-height: calc(100vh - 149px);
 }
 
 .HomeLayout {
@@ -44,6 +44,10 @@ button > span {
     margin: 0 auto;
     padding: 10px 0 50px;
     box-sizing: border-box;
+}
+
+.DetailLayout {
+    min-height: calc(100vh - 149px);
 }
 
 .form > ul {
@@ -71,4 +75,10 @@ button > span {
     height: 80px;
     background-color: #f3f3f3;
     font-size: 1rem;
+}
+
+@media (max-width: 875px) {
+    .DetailLayout {
+        min-height: 0;
+    }
 }
