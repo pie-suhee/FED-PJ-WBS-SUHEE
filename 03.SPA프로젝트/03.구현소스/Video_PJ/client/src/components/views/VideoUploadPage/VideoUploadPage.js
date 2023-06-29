@@ -7,6 +7,7 @@ import axios from 'axios'
 import { useSelector } from "react-redux"
 
 import '../../../css/layout.css'
+import '../../../css/videoupload.css'
 
 const { Title } = Typography;
 const { TextArea } = Input;
@@ -24,7 +25,7 @@ const Catogory = [
     { value: 0, label: "Sports" },
 ]
 
-function UploadVideoPage(props) {
+function UploadVideoPage() {
     const navigate = useNavigate()
     const user = useSelector(state => state.user);
 
@@ -86,14 +87,15 @@ function UploadVideoPage(props) {
                     alert('Failed to upload video')
                 }
             })
-
     }
 
     const onDrop = (files) => {
+
         let formData = new FormData();
         const config = {
             header: { 'content-type': 'multipart/form-data' }
         }
+        console.log(files)
         formData.append("file", files[0])
 
         axios.post('/api/video/uploadfiles', formData, config)
@@ -117,6 +119,8 @@ function UploadVideoPage(props) {
                                 alert('Failed to make the thumbnails');
                             }
                         })
+
+
                 } else {
                     alert('failed to save the video in server')
                 }
@@ -131,25 +135,22 @@ function UploadVideoPage(props) {
             </div>
 
             <Form onSubmit={onSubmit}>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <div className='DropZone'>
                     <Dropzone
                         onDrop={onDrop}
                         multiple={false}
                         maxSize={800000000}>
                         {({ getRootProps, getInputProps }) => (
-                            <div style={{ width: '300px', height: '240px', border: '1px solid lightgray', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-                                {...getRootProps()}
-                            >
+                            <div className='PlusImg'{...getRootProps()}>
                                 <input {...getInputProps()} />
                                 <PlusOutlined />
-
                             </div>
                         )}
                     </Dropzone>
 
-                    {Thumbnail !== "" &&
-                        <div>
-                            <img src={`http://localhost:5000/${Thumbnail}`} alt="haha" />
+                    {Thumbnail &&
+                        <div className='TumbnailImg'>
+                            <img src={`http://localhost:5000/${Thumbnail}`} alt="Thumbnail" />
                         </div>
                     }
                 </div>

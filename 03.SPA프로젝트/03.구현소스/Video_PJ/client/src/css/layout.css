@@ -27,13 +27,19 @@ button > span {
     min-height: calc(100vh - 153px);
 }
 
+.HomeLayout {
+    width: 85%;
+    margin: 3rem auto;
+}
+
 .UserLayout {
     justify-content: center;
     align-items: center;
 }
 
 .UploadLayout {
-    width: 60%;
+    width: 80%;
+    max-width: 700px;
     min-width: 300px;
     margin: 0 auto;
     padding: 10px 0 50px;

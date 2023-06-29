@@ -32,14 +32,12 @@ const upload = multer({ storage: storage }).single("file")
 
 
 router.post("/uploadfiles", (req, res) => {
-
     upload(req, res, err => {
         if (err) {
             return res.json({ success: false, err })
         }
         return res.json({ success: true, filePath: res.req.file.path, fileName: res.req.file.filename })
     })
-
 });
 
 
@@ -48,7 +46,6 @@ router.post("/thumbnail", (req, res) => {
     let thumbsFilePath ="";
     let fileDuration ="";
 
-    // 비디오 정보 가져오기
     ffmpeg.ffprobe(req.body.filePath, function(err, metadata){
         console.dir(metadata);
         console.log(metadata.format.duration);
@@ -56,7 +53,7 @@ router.post("/thumbnail", (req, res) => {
         fileDuration = metadata.format.duration;
     })
 
-    // 썸네일 생성
+
     ffmpeg(req.body.filePath)
         .on('filenames', function (filenames) {
             console.log('Will generate ' + filenames.join(', '))
@@ -70,7 +67,7 @@ router.post("/thumbnail", (req, res) => {
             // Will take screens at 20%, 40%, 60% and 80% of the video
             count: 3,
             folder: 'uploads/thumbnails',
-            size:'320x240',
+            size:'340x240',
             // %b input basename ( filename w/o extension )
             filename:'thumbnail-%b.png'
         });
@@ -89,7 +86,6 @@ router.get("/getVideos", (req, res) => {
 });
 
 router.post("/uploadVideo", (req, res) => {
-
     const video = new Video(req.body)
 
     video.save((err, video) => {
@@ -98,10 +94,9 @@ router.post("/uploadVideo", (req, res) => {
             success: true 
         })
     })
-
 });
 
-router.post("/getVideo", (req, res) => {
+/* router.post("/getVideo", (req, res) => {
 
     Video.findOne({ "_id" : req.body.videoId })
     .populate('writer')
@@ -109,9 +104,9 @@ router.post("/getVideo", (req, res) => {
         if(err) return res.status(400).send(err);
         res.status(200).json({ success: true, video })
     })
-});
+}); */
 
-router.post("/getSubscriptionVideos", (req, res) => {
+/* router.post("/getSubscriptionVideos", (req, res) => {
     //Need to find all of the Users that I am subscribing to From Subscriber Collection    
     Subscriber.find({ 'userFrom': req.body.userFrom })
     .exec((err, subscribers)=> {
@@ -132,6 +127,6 @@ router.post("/getSubscriptionVideos", (req, res) => {
                 res.status(200).json({ success: true, videos })
             })
     })
-});
+}); */
 
-module.exports = router;
+module.exports = router

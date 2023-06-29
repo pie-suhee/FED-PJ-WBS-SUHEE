@@ -7,7 +7,6 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons'
 import { Button, Input, Typography } from 'antd'
 
 import '../../../css/layout.css'
-import '../../../css/login.css'
 
 const { Title } = Typography
 
