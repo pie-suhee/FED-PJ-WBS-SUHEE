@@ -9,7 +9,7 @@ const { Subscriber } = require("../models/Subscriber");
 
 let storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'uploads/')
+        cb(null, 'server/uploads/')
     },
     filename: (req, file, cb) => {
         cb(null, `${Date.now()}_${file.originalname}`)
@@ -31,7 +31,7 @@ const upload = multer({ storage: storage }).single("file")
 //=================================
 
 
-router.post("/server/uploadfiles", (req, res) => {
+router.post("/uploadfiles", (req, res) => {
     upload(req, res, err => {
         if (err) {
             return res.json({ success: false, err })
@@ -57,7 +57,7 @@ router.post("/thumbnail", (req, res) => {
     ffmpeg(req.body.filePath)
         .on('filenames', function (filenames) {
             console.log('Will generate ' + filenames.join(', '))
-            thumbsFilePath = "uploads/thumbnails/" + filenames[0];
+            thumbsFilePath = "server/uploads/thumbnails/" + filenames[0];
         })
         .on('end', function () {
             console.log('Screenshots taken');
@@ -66,7 +66,7 @@ router.post("/thumbnail", (req, res) => {
         .screenshots({
             // Will take screens at 20%, 40%, 60% and 80% of the video
             count: 3,
-            folder: 'uploads/thumbnails',
+            folder: 'server/uploads/thumbnails',
             size:'340x191',
             // %b input basename ( filename w/o extension )
             filename:'thumbnail-%b.png'
@@ -85,7 +85,7 @@ router.get("/getVideos", (req, res) => {
 
 });
 
-router.post("/server/uploadVideo", (req, res) => {
+router.post("/uploadVideo", (req, res) => {
     const video = new Video(req.body)
 
     video.save((err, video) => {
