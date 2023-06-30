@@ -34,7 +34,7 @@ function LandingPage() {
         seconds = seconds<10?"0"+seconds:seconds;
 
         return <Col lg={6} md={8} xs={24}>
-            <div style={{ position: 'relative' }}>
+            <div style={{ position: 'relative', marginTop: '1rem' }}>
                 <a href={`/video/${video._id}`} >
                     <img style={{ width: '100%' }} alt="thumbnail" src={`http://localhost:5000/${video.thumbnail}`} />
                     <div className="Duration">

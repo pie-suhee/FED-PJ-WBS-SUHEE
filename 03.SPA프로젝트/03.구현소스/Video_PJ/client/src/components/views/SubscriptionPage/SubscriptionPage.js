@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
-// import { FaCode } from "react-icons/fa";
-import { Card, Avatar, Col, Typography, Row } from 'antd';
-import axios from 'axios';
-import moment from 'moment';
+import { Card, Avatar, Col, Typography, Row } from 'antd'
+import axios from 'axios'
+import moment from 'moment'
 
 import '../../../css/layout.css'
 import '../../../css/videolist.css'
@@ -37,7 +36,7 @@ function SubscriptionPage() {
         seconds = seconds<10?"0"+seconds:seconds
 
         return <Col lg={6} md={8} xs={24}>
-            <div style={{ position: 'relative' }}>
+            <div style={{ position: 'relative', marginTop: '1rem' }}>
                 <a href={`/video/${video._id}`} >
                     <img style={{ width: '100%' }} alt="thumbnail" src={`http://localhost:5000/${video.thumbnail}`} />
                     <div className="Duration">
