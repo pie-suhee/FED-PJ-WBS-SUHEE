@@ -31,7 +31,7 @@ const upload = multer({ storage: storage }).single("file")
 //=================================
 
 
-router.post("/uploadfiles", (req, res) => {
+router.post("/server/uploadfiles", (req, res) => {
     upload(req, res, err => {
         if (err) {
             return res.json({ success: false, err })
@@ -85,7 +85,7 @@ router.get("/getVideos", (req, res) => {
 
 });
 
-router.post("/uploadVideo", (req, res) => {
+router.post("/server/uploadVideo", (req, res) => {
     const video = new Video(req.body)
 
     video.save((err, video) => {

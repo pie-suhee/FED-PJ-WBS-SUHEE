@@ -78,7 +78,7 @@ function UploadVideoPage() {
             thumbnail: Thumbnail
         }
 
-        axios.post('/api/video/uploadVideo', variables)
+        axios.post('/api/video/server/uploadVideo', variables)
             .then(response => {
                 if (response.data.success) {
                     alert('video Uploaded Successfully')
@@ -98,7 +98,7 @@ function UploadVideoPage() {
         console.log(files)
         formData.append("file", files[0])
 
-        axios.post('/api/video/uploadfiles', formData, config)
+        axios.post('/api/video/server/uploadfiles', formData, config)
             .then(response => {
                 if (response.data.success) {
 

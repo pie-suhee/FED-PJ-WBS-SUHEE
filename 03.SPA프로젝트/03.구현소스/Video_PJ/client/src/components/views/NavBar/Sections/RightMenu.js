@@ -40,7 +40,7 @@ function RightMenu(props) {
   const Afteritems = [
     {
       label: (
-        <a href="/video/upload">Upload</a>
+        <a href="/video/server/upload">Upload</a>
       ),
       key: 'create',
     },
